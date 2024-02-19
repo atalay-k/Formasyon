@@ -1,0 +1,55 @@
+---
+title: "`r emo::ji('muscle')` EGİTİMDE ÖLÇME VE DEĞERLENDİRME"
+subtitle: " <br> `r emo::ji('graph')` TEST İSTATISTIKLERI"
+author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
+date: "2022-2023 Güz <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r set-theme, include=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color      = "#0F4C81", # pantone classic blue
+  secondary_color    = "#B6CADA", # pantone baby blue
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway", "300", "300i"),
+  code_font_google   = google_font("Source Code Pro"),
+  text_font_size     = "30px"
+)
+```
+
+```{r, include=FALSE}
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ # tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%d/%m")
+ # tfri <- format(tfri, format="%d/%m")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
+ return(tmp)
+}
+
+library(lubridate)
+options(scipen=999)
+library(tidyverse)
+library(stevemisc)
+mon <- ymd(20220207)
+```
+
+

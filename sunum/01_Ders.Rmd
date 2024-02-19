@@ -1,0 +1,260 @@
+---
+title: "`r emo::ji('muscle')` EGİTİMDE OLCME VE DEGERLENDİRME"
+subtitle: " <br> `r emo::ji('graph')` Dersi Tanıtma"
+author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
+date: "2024 Bahar <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+```{r set-theme, include=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color      = "#0F4C81", # pantone classic blue
+  secondary_color    = "#B6CADA", # pantone baby blue
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway", "300", "300i"),
+  code_font_google   = google_font("Source Code Pro"),
+  text_font_size     = "30px"
+)
+```
+
+```{r, include=FALSE}
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ # tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%d/%m")
+ # tfri <- format(tfri, format="%d/%m")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
+ return(tmp)
+}
+
+library(lubridate)
+options(scipen=999)
+library(tidyverse)
+library(stevemisc)
+mon <- ymd(20221003)
+```
+
+---
+# Eğitmen .huge[`r emo::ji("woman_teacher")`]
+
+.huge[`r emo::ji("link")`] [Doç. Dr. Kübra Atalay Kabasakal](https://avesis.hacettepe.edu.tr/katalay)
+
+.huge[`r emo::ji("link")`] **Sinif:** Zoom Perşembe 13:00-14:50
+
+**Ofis saatleri:** Cuma 10:00-12:00    
+ 
+**Ofis:** "Eğitim Bilimleri Enstitüsü"                              
+---
+# EGT204 IZLENCE.huge[`r emo::ji("stats")`]
+
+.hand[İçerik...]
+
+- Dersin Amacı
+- Ders Hedefleri
+- Ders İşlenişi
+- Notlandırma
+- Derse Katılım
+- İletişim
+- Okuma Listesi
+
+---
+# Ders Amacı
+
+- Eğitimde ölçme ve değerlendirmenin önemini kavrama
+
+--
+
+- Ölçme ve değerlendirmeyle ilgili temel kavramlar
+
+--
+
+- Ölçme araçlarının psikometrik (geçerlik,güvenirlik, kullanışlılık) özellikleri bilgisine sahip olma 
+
+--
+
+- Başarı testleri geliştirme ve uygulamada yeterli olma.
+
+---
+# Ders Hedefleri
+
+Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki hedeflenen kazanımları edinmiş olur:
+
+**1.** Ölçme ve değerlendirme ile ilgili temel kavramları ve olguları bilir.  
+--
+
+**2.** Ölçme ve değerlendirme dersi ile ilgili kavramları kendi derslerinde kullanır.  
+--
+
+**3.** Hazırlanan bir ölçme aracında olması gereken temel özellikleri sıralar.  
+--
+
+**4.** Psikometrinin güvenirlik ve geçerlik gibi tekniklerinin teorik temellerini anlar.  
+
+--
+**5.** Güvenirlik ve geçerlilik tekniklerini gerçek veri setlerinde uygulayabilir.  
+--
+
+**6.** Eğitimde ölçme ve değerlendirme yapmanın önemini açıklar.  
+
+---
+# Ders Hedefleri
+
+Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki hedeflenen kazanımları edinmiş olur:
+
+**7.** Eğitimde kullanılan sonuç ve süreç odaklı ölçme araçlarının özelliklerini bilir ve hazırlar.  
+--
+
+**8.** Test istatistiklerini kullanarak test sonucunda oluşan dağılımları yorumlar.  
+--
+
+**9.** Ölçme ve değerlendirme dersi ile ilgili kavramları kendi derslerinde kullanır.
+--
+
+**10.** Hazırlanan bir ölçme aracında olması gereken temel özellikleri sıralar.  
+--
+
+**11.** Ölçme ve değerlendirme dersi ile ilgili kavramları kendi derslerinde kullanır.  
+--
+
+**12.** Hazırlanan bir ölçme aracında olması gereken temel özellikleri sıralar.   
+--
+
+**13.** Uygulanan ölçme araçlarından alınan öğrenci çıktısını değerlendirir ve öğrenciye not verir.  
+
+
+---
+# Ders İşlenişi
+
+- Dersler "Ders Planı" başlığı altındaki sıralamaya göre işlenecektir.
+
+- Belirtilen başlık altında her haftanın ilgili ders dokumanına bağlantı moodleda yer almaktadır.
+
+---
+# Notlandırma
+
+-   **25% Ara Sınav**  
+
+-   **25% Derse Katılım ve Ödevler** 
+    
+-    Bu derste sizden **5** ödev yapmanız beklenmektedir. Ödev başlıkları "Ders Planı" icinde ilgili haftada yer almaktadır. Ödevler ve **ders içinde uygulanacak mini sınavlar** genel başarı puanının **%25'ını** oluşturmaktadır. Ödev başlıklarında ödev ağırlıklarını görebilirsiniz. Ödevlerinizi moodle ilgili haftada bulacaksınız.
+
+-   **50% Genel Sınav** tarihi ve uygulanma şekli daha sonra duyurulacaktır.
+
+---
+# Derse Katılım
+
+- Hacettepe Üniversitesi Ön Lisans, Lisans Eğitim-Öğretim Yönetmeliğinde geçtiği gibi derslere devam zorunludur. 
+
+- Mazeretler de dahil olmak üzere kuramsal (teorik) saatlerin **%30'undan** fazlasına katılmayan öğrenci o dersin genel ve bütünleme sınavına **alınmaz.**
+
+---
+## E-mail ile İletişim
+
+- Bu dökumanda yazmayan her türlü konuda bana `r emo::ji('link')`[katalay@hacettepe.edu.tr](katalay@hacettepe.edu.tr) ile ulaşabilirsiniz.
+
+
+
+- Tüm sınıfı ilgilendiren konular için ise ilk derste aranızdan seçtiğimiz gönüllü öğrenci ile iletişim kurulacaktır.
+
+
+---
+## Okuma Listesi
+
+- Atılgan, Hakan. (2007). Eğitimde ölçme ve değerlendirme. Ankara: Anı Yayıncılık.
+
+- Başol, Gülşah. (2007). Eğitimde ölçme ve değerlendirme. İstanbul: Lisans Yayıncılık.
+
+- Baykul, Yaşar & Turgut, M. Fuat. (2010). Eğitimde ölçme ve değerlendirme. Ankara: Pegem Akademi Yayıncılık.
+
+- Baykul, Yaşar. (2010). Eğitim ve psikolojide ölçme. Ankara: Pegem Akademi Yayıncılık.
+
+- Çetin, Bayram (Ed.). (2020). Eğitimde ölçme ve değerlendirme. Ankara: Anı Yayıncılık.
+
+
+---
+## Okuma Listesi
+- Demirtaşlı, Nükhet(Ed.). (2017). Eğitimde ölçme ve değerlendirme. Ankara: Anı Yayıncılık.
+
+- Güler, Neşe. (2011). Ölçme ve değerlendirme. Ankara: Pegem Akademi Yayıncılık.
+
+- Özçelik, Durmuş Ali. (2010). Ölçme ve değerlendirme. Ankara: Pegem Akademi Yayıncılık.
+
+- Öztürk Gübeş, N. & Özberk, H. E.(Ed.). (2018). Eğitimde ölçme ve değerlendirme. Ankara: Lisans Yayıncılık.
+
+- Sahin, Murat Doğan(Ed.). (2021). Eğitimde ölçme ve değerlendirme. Ankara: Pegem Akademi Yayıncılık.
+
+
+---
+## Okuma Listesi
+
+- Tan, Şeref. (2009). Öğretimde Ölçme ve değerlendirme. Ankara: Pegem Akademi Yayıncılık.
+
+
+- Tavşancıl, Ezel (Ed.) (2013). Psikolojik Test ve Değerleme. Ankara. Nobel Yayın Dağıtım Tic.Ltd. Şti.
+
+- Tekin, Halil. (2009). Eğitimde Ölçme ve değerlendirme. Ankara: Yargı Yayınevi
+
+- Turgut, Fuat. (2011). Eğitimde ölçme ve değerlendirme. Ankara: Pegem Akademi Yayıncılık.
+---
+
+## Ders Planı
+### `r advdate(mon, 1)`: Dersin ve Kaynakların Tanınımı
+
+- Tanışma
+
+- Dersin amacı, içeriği ve kaynaklarının tanıtılması
+
+```{r echo=FALSE, fig.align='center',out.width="50%"}
+knitr::include_graphics("img/hosgeldiniz.jpg")
+```
+
+`r emo::ji('link')` [Lutfen anketi doldurunuz](https://forms.gle/FpVL6iamu1Q87hjd6)<br>
+
+---
+## Ders Planı
+
+- `r advdate(mon, 1)`:   Dersin ve Kaynakların Tanınımı
+- `r advdate(mon, 2)`:   Ölçmede Temel Kavramlar
+- `r advdate(mon, 3)`:   Ölçmede Temel Kavramlar
+- `r advdate(mon, 4)`:   Ölçme araçlarının temel nitelikleri I
+- `r advdate(mon, 5)`:   Ölçme araçlarının temel nitelikleri II
+- `r advdate(mon, 6)`:   Ölçme araçlarının temel nitelikleri III
+- `r advdate(mon, 7)`:   Ara Sınav
+- `r advdate(mon, 8)`:   Eğitimde kullanılan ölçme araçları I
+- `r advdate(mon, 9)`:   Eğitimde kullanılan ölçme araçları II
+- `r advdate(mon, 10)`:  Eğitimde kullanılan ölçme araçları III
+- `r advdate(mon, 11)`:  Eğitimde kullanılan ölçme araçları IV
+- `r advdate(mon, 12)`:  Test Geliştirme ve Madde Analizi
+- `r advdate(mon, 13)`:  Test İstatistikleri
+- `r advdate(mon, 14)`:  Not Verme ve Genel Tekrar
+- `r advdate(mon, 15)`:  Genel Sınav
+
+
+
+---
+
+.center[
+.hand-large[teşekkürler !]
+
+
+`r emo::ji('thanks')` 
+
+]
+--
+
+

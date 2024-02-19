@@ -1,0 +1,593 @@
+---
+title: "`r emo::ji('chart')` EGİTİMDE ÖLÇME VE DEĞERLENDİRME"
+subtitle: " <br> `r emo::ji('time')` Ölçme Araçları - I"
+author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
+date: "2022-2023 Güz <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+
+```{r set-theme, include=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color      = "#0F4C81", # pantone classic blue
+  secondary_color    = "#B6CADA", # pantone baby blue
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway", "300", "300i"),
+  code_font_google   = google_font("Source Code Pro"),
+  text_font_size     = "30px"
+)
+```
+
+```{r, include=FALSE}
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ # tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%d/%m")
+ # tfri <- format(tfri, format="%d/%m")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
+ return(tmp)
+}
+
+library(lubridate)
+options(scipen=999)
+library(tidyverse)
+library(stevemisc)
+mon <- ymd(20220207)
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(emo)
+library(DiagrammeR)
+library(DiagrammeRsvg) 
+library(rsvg) 
+library(ggplot2)
+maddeturleri <- grViz("digraph{
+                     graph[rankdir = TB]
+                     node[shape = rectangle, style = empty] 
+                     A[label = 'Madde Türleri']
+                     B[label = 'Seçme Gerektien']
+                     C[label = 'Açık Uçlu']
+                     D[label = 'Doğru-Yanlış']
+                     E[label = 'Eşleştirme']
+                     F[label = 'Çoktan Seçmeli']
+                     G[label = 'Kısa Yanıtlı']
+                     H[label = 'Uzun Yanıtlı']
+
+                     edge[color = red]
+                     A -> B [color = black]
+                     A -> C [color = black]
+                     B -> D [color = black]
+                     B -> E [color = black]
+                     B -> F [color = black]
+
+
+                     C -> G [color = black]
+                     C -> H [color = black]
+                     }")
+```
+
+
+## Ölçme Araçları
+
+.pull-left[
+
+
+
+- Eğitimde farklı düzeyde gerçekleşen öğrenmeleri yoklamak üzere farklı **madde türleri** geliştirilmiştir.
+
+
+- Farklı türde maddelerin birbirlerine **üstünlüklerini avantaja dönüştürmek** için farklı madde türleri bir arada kullanılmalıdır. 
+
+
+
+]
+.pull-right[
+```{r echo=FALSE, fig.align='center',out.width="100%"}
+maddeturleri
+```
+]
+
+---
+## Madde ve Soru
+
+- Test veya sınav sonuçlarının anlamlı olabilmesi için sınav maddelerinin çok iyi seçilmesi gerekir. 
+
+--
+- **Madde** ile **soru** kavramları her ne kadar aynı anlamda kullanılsa da aslında farklı şeylerdir. 
+
+--
+- Mesela Saat kaç?, Adın ne? Yaşın kaç? gibi ifadeler birer sorudur. Yani sadece cevap gerektiren puanlama içermeyen ifadelerdir.
+
+--
+- Bir cümleye madde diyebilmemiz için maddedeki soruya verilen cevabın **puanlanabilir** olması gerekir. Yani maddeye verilen cevap doğru ise tam puan doğru değil ise eksik ya da sıfır puan verilir.
+
+--
+- Madde her zaman soru önergesi içermeyebilir. Mesela “Türkiye’nin coğrafi bölgelerini yazınız” şeklinde bir yönerge verilebilir.  Ölçme ve değerlendirme dersimizde **soru** kavramından çok **madde** kavramını kullanacağız. 
+
+
+---
+## Yazılı Yoklamalar
+
+- Cevaplayıcının cevabı düşünüp hatırlayarak ve hatırladığı cevabı organize ederek yazılı olarak sunduğu maddelerdir.
+
+- ilişkileri açıklamak
+
+--
+- iki görüşü karşılaştırmak
+
+--
+- bir görüşü desteklemek veya reddetmek,
+
+--
+- bilgileri yeni durumlara uygulamak
+
+--
+- bilimsel bazı olguları açıklamak
+
+--
+- analiz etmek
+
+--
+- yeni fikirler üretmek
+
+--
+- matematiksel bir ispat yapmak vb. 
+
+--
+- becerileri ölçmek amacıyla kullanılır. 
+
+--
+- yaratıcı düşünme, eleştirel düşünme gibi diğer madde tipleriyle kolayca ölçülemeyen davranışları ölçmek ve geliştirmek için uygundur.
+
+
+---
+## Yazılı Yoklamalar
+
+- **Sınırlı Yanıtlı:** Yanıtları sınırlı veya kısa olan maddelerdir. Verilecek cevabın niteliğine, uzunluğuna veya örgütlenmesine ilişkin bazı sınırlamalar getirilir. **listeleyin, tanımlayın, nedenlerini sıralayın, vb.**
+
+--
+  - Ölçme ve değerlendirme arasındaki en önemli ilişkiyi açıklayınızz.
+
+
+--
+
+- **Serbest Yanıtlı:** Yanıtları sınırlı olmayan, genellikle de kompozisyon tipi maddelerdir.
+
+--
+  - Ölçme ve değerlendirmenin eğitim sistemindeki yeri ve önemi nelerdir? Görüşlerinizi gerekçeleriyle açıklayınız.
+
+---
+## Yazılı Yoklamalar
+
+- **Seçimlik Sorular:** Cevaplanması cevaplayıcının seçimine bırakılan sorulardır. Bazı durumlarda verilen bütün sorular arasından belirli sayıda sorunun yanıtlanması istenir. Bazı durumlarda da zorunlu yanıtlanacak soruların yanında seçimlik sorular da verilerek bunlar arasından  belirli sayıda sorunun seçilip cevaplanması istenir. 
+
+- **Zorunlu Yanıtlı Sorular:** Cevaplanması bütün cevaplayıcılar için zorunlu olan sorulardır ve seçimli sorularla birlikte kullanılırlar. 
+
+
+---
+
+##Yazılı Yoklamalar- Örnek Sorular
+
+- İnsan sindirim sistemi özelliklerini yazınız?
+
+--
+
+- Kurbağalar 200 milyon yıldır tundralardan tropikal bölgelere kadar uzanan geniş bir alanda çoğalıp yayıldılar. Günümüzde ise hızla ve belki de geri dönülmez bir şekilde ortadan kayboluyorlar. Kurbağa neslinin yok olmaya yüz tutmasının nedenlerini açıklayınız.
+
+
+???
+- Örnekte yanıt için öğrenciler sadece ders kitaplarındaki ya da derste öğretmen tarafından anlatılan bilgiyi hatırlayıp yazacaklardır uzun yanıt  gerektiren bu madde Aslında üst düzey zihinsel becerileri ölçmede yetersiz kalmıştır bu konuda hatırlama düzeyindeki öğrenmeleri yokalanacaksa kısa yanıtlı veya doğru yanlış madde türü tercih edilmelidir.
+
+- Bu örnekte öğrencinin bilgiyi organize etme sıkıntı yaşamaması için öğrenciler istenilen yazıda sınırlandırılması yararlı olacaktır Bu bağlamda Yönerge söyle düzenlenebilir kurbağa nesnenin yok olmaya yüz tutmasını iklim değişiklikleri çevre kirliliği insan faaliyetleri bağlamında tartışınız.
+---
+
+##Yazılı Yoklamalar- Örnek Sorular
+
+
+- “Sakla samanı gelir zamanı.” atasözünün yola çıkarak bir kompozisyon yazınız.
+
+--
+
+- Yeni çıkan bir lokanta hakkında bir tanıtım yazısı yazacağız düşünün. Bu yazıda lokantanın yemeklerini çeşidi ve lezzeti, servisin kalitesi ve hızı,  dekorasyonu yemeklerin kalitesine göre fiyatı kapsamında yazınız.En az 250 En fazla 300 kelime kullanarak yazınız.
+
+
+???
+
+- bu örnekte verilen atasözünün anlamını ve önemini açıklayan bir kompozisyon yazılması beklenmektedir burada öğrencilerden bazısı aynı anlama gelen cümleleri tekrar tekrar yazarak gereksiz yere uzatabilir. yönergeye sınırlandırmalar koyarak bunun önüne geçilebilir. üç paragraftan oluşturunuz ya da yazacağınız kompozisyon 100 kelimeyi geçmemelidir.
+
+
+- Bu örnekte öğrencinin geçmiş verilerini kullanarak yeni bir fikir ortaya koyması beklenmektedir. sentez düzeyideki Bu açık uçlu maddede tek bir anahtar yanıt olmadığından puanlanması da oldukça karmaşıktır. Aslında tüm üst düzey becerilerin açık uçlu maddelerde verilen yanıtın Doğruluğu  değil öğrencinin bilgiyi kullanma organize etme çıkarımda bulunma yorumlama özgün fikir ortaya koyma gib becerileri yansıtıp yansıtmadığı
+
+
+---
+##Yazılı Yoklamalar
+
+- Cevaplayıcı cevabı kendi düşünüp yazmak zorundadır.
+
+--
+- Yazılı yoklama hazırlamak kısa sürerken, puanlamak uzun sürebilir.
+
+--
+- Madde sayısının az olması nedeniyle hem kapsam geçerliği hem de güvenirliği düşüktür. 
+
+--
+- Her bir madde diğerinden bağımsız cevaplanabilmelidir.
+
+--
+- Yazı güzelliği ve ifade gücü puanlamayı etkileyebilir. 
+
+--
+- Maddelerin güçlük düzeyini belirlemek zordur.
+
+--
+- Şans başarısı yoktur. 
+
+---
+## Yazılı Yoklamalar
+
+- Yazma hızı öğrenciler arasında farklı olduğundan **yazı yazma hızı** gibi farklı bir özellik ölçülecek özelliğe karışabilir.
+
+- Bu nedenle, bu maddelerden oluşan sınavlarda ölçülecek özelliğe başka özelliklerin karışması geçerliği düşürür.
+
+
+---
+## Yazılı Yoklamalarda Dikkat Edilecek Noktalar
+
+- Maddeler açık ve anlaşılır olmalı, **farklı algılamalara neden olmamalıdır.**
+
+--
+- Maddeler bir kaynaktan aynen alınmamalıdır.
+
+--
+- Mümkün olduğunca cevapları kısa maddeler sorulmalıdır.
+
+--
+- Madde diğer maddelerden bağımsız olarak cevaplandırılabilmelidir.
+
+
+---
+## Açık Uçlu Maddelerin Kullanıldığı Sınav Türleri
+
+- Açık Sınav
+
+- Eve götürülen sınav
+
+- Çalışma soruları
+
+- Ezeberlenmesi gerekmeyen notlar
+
+---
+## Yazılı Yoklamalarda Dikkat Edilecek Noktalar
+
+- Sınav Süresi
+
+--
+- Sınav Yönergesi
+
+--
+- Maddelerde yer alan ifadeler
+
+
+???
+- Sınav kağıdında, hangi sorunun kaç puan olduğu, puanlamanın nasıl yapılacağı, sınav süresinin ne kadar olduğu, cevaplayanların hangi kurallara uyması gerektiği vb. konularda ilgi veren bir yönerge bulunmalıdır. Böyle bir yönerge aracın güvenirliğini artırabilir.
+
+---
+## Yazılı Yoklamalarda Dikkat Edilecek Noktalar
+
+- Bu maddelere verilen cevaplarda **kesin doğru, kesin yanlış ayrımı** zor olduğundan, cevapların okunması ve puanlanması zaman alır. 
+
+--
+
+- Bu nedenle, özellikle çok sayıda cevaplayıcının olduğu durumlarda puanlayıcının cevapları okumaya zamanı azsa veya sonuçların çabuk bildirilmesi gerekiyorsa **kullanışlılık düşer.**
+
+--
+
+- Bu maddelere verilen cevaplarda **kesin doğru, kesin yanlış ayrımı** yapmanın zor olması **yansız puanlama yapmayı da zorlaştırır.** Bu maddelerin cevaplarına verilen puanlara karışan öznellik yüksektir. Bu nedenle de, **puanlayıcı güvenirliği düşüktür.**
+
+---
+## Yazılı Yoklamalarda Dikkat Edilecek Noktalar
+
+- Açık uçlu maddeler **şişirme ve esnek cevaplar** vermeye elverişlidir. 
+
+- Böyle durumlarda **puanlayıcılar, puan vereceği yanıtı bulmakta zorlanmakta,** yanlışları gözden kaçırabilmekte veya yanıtın uzunluğunun etkisinde kalarak gereğinden yüksek puanlar verebilmektedirler.
+
+
+---
+## Yazılı Yoklamalarda Dikkat Edilecek Noktalar
+
+- Puanlamada ortaya çıkabilecek yanlılık sınavın güvenirliğini düşürür. 
+
+--
+- **Dereceli puanlama anahtarı** kullanılarak ve birden fazla puanlayıcının puanlaması ile bu sorun giderilebilir.
+
+--
+- Uzun-yanıtlı **maddelerin hazırlanması ve sınavın uygulanmasının kolaylığı,** bu tip sınavların kullanışlığını arttırmaktadır.
+
+--
+- Soru hazırlamak zaman alıcı değilken, sınav kağıtlarının okunması çok zaman alıcıdır. (kullanışlılığı düşürür)
+
+--
+
+---
+## Yazılı Yoklamalarda Dikkat Edilecek Noktalar
+
+- Genel İzlenimle Puanlama:
+
+--
+
+- Sınıflama Yoluyla Puanlama:  
+
+--
+
+- Sıralama Yoluyla Puanlama: 
+
+--
+
+- Puanlama Anahtarı kullanma: 
+
+  - Öğretmen sınavdan önce sorulara kendisi yanıt verir. Verilen yanıtların her bir soruda ne olursa kaç puan verileceğinin tanımlanması ile anahtar oluşturulur. Puanlama yapılırken öğrencinin kağıdı ile anahtar karşılaştırılır. 
+
+---
+
+## Örnek Soru ve Puanlama
+- Yazılı sınavların puanlanması: Güvenirlik nedir? ve hesaplama yöntemleri nelerdir? Eğitimdeki önemini belirtiniz ve bir örnekle güvenirlik nasıl sağlanır açıklayınız. (16puan)
+
+|Sınıflamalar|Tanımlamalar|Puan|
+|---|---|---|
+|Mükemmel|Güvenirlik tanımlamış, hesaplama yöntemleri ve eğitimdeki önemini belirtmiş ve ve bir örnekle açıklamış |16|
+|İyi|Güvenirlik tanımlamış, hesaplama yöntemleri ve eğitimdeki önemini belirtmiş |12|
+|Geliştirilmeli|Güvenirlik tanımlamış, hesaplama yöntemlerini belirtmiş |8|
+|Geliştirilmeli|Güvenirlik tanımlamış |4|
+|Yetersiz|İlgisiz yanıtlar vermiş |4|
+
+---
+## PISA ORNEK MADDE
+
+Ekle
+
+---
+## Yazılı sınavların puanlanması
+
+- Her bir madde için uygun yanıtları (tam doğru) ve kısmi yanıtları belirleyin.
+Her bir maddeye verilecek tam ve kısmi puanları belirleyin.
+
+--
+
+- Bir maddeye verilen tüm öğrenci yanıtlarını okuyup puanladıktan sonra bir sonraki maddeye geçin.
+
+--
+
+- Öğrencilerin kağıtlarını okurken, objektif puanlama yapabilmek için öğrenci ismi kısmını kapatın. 
+
+---
+## Yazılı sınavların puanlanması
+
+- Puanlama sırasında iyi bir kâğıttan sonra okunan orta düzeydeki bir kâğıt, olduğundan daha az iyi; kötü bir kâğıttan sonra okunan iyi bir kâğıt da daha iyi görünebilir. Buna **hareleme etkisi** adı verilir. 
+
+--
+
+- Bu etki, bir öğrencinin cevap kâğıdındaki cevapların tamamının okunması yerine, bütün öğrencilerin birinci, daha sonra ikinci, üçüncü, … sorularına ait cevapların okunması suretiyle azaltılabilir. 
+
+
+---
+## Yazılı sınavların puanlanması
+
+- **Yorgunluk ve dikkat eksikliği başladığında okuma ve puanlama bırakılmalıdır.** Bu gibi durumlar puanlama hatalarını artırıcı etkide bulunmaktadırlar.
+
+--
+
+- Mümkünse **birden fazla** puanlayıcı kullanılmalıdır. 
+
+--
+
+- Cevaplayıcı puanları olarak birden fazla puanlayıcıdan alınan puanların ortalamaları kullanılırsa, farklı puanlayıcılardan gelen farklı yönlerdeki puanlama hataları birbirini sıfırlayacağı için cevaplayıcının gerçek puanına yaklaşılacaktır.
+
+
+---
+## **Avantajları** 
+
+- Üst düzey davranışlar (analiz, sentez ve değerlendirme) ölçülür. 
+
+--
+
+- Hazırlanması kolaydır (kullanışlı). 
+
+--
+
+- Şans başarısı yoktur. 
+
+--
+
+- Öğrenciler yanıtlarını düşünüp hatırlayarak yazdıklarından, yazılı yoklamaların davranışları daha geçerli ölçtüğü söylenebilir. 
+
+
+
+---
+## Dezavantajları
+
+- Çok fazla madde sorulamadığından kapsam geçerliği düşüktür.
+
+--
+
+- Genel izlenimle puanlama kullanılırsa güvenirliği düşürür.
+
+--
+
+- Şişirme cevaplara çok elverişlidir. 
+
+--
+
+- Uygulama ve puanlama zaman aldığından kullanışsızdır. 
+
+--
+
+- Subjektif puanlamaya dayandığı için puanlama güvenirliği düşüktür.
+
+
+---
+## Dezavantajları
+
+- Bu maddelere verilen cevaplar cevaplayıcının fazla zamanını almaktadır. 
+
+--
+
+- Cevaplamak fazla zaman aldığından ve cevaplayanlar cevaplarını belli bir sürede yazmak zorunda olduklarından sınavlarda çok sayıda uzun-yanıtlı soru sorulamaz.
+
+--
+
+- Bu nedenle, bu maddelerden oluşan sınavlarda güvenirlik ve kapsam geçerliği düşer.
+
+
+
+---
+## Sözlü Sınavlar
+
+- Maddelerin genelde sözlü sorulduğu, cevapların sözlü verildiği sınav türüdür.
+
+--
+
+- Genellikle birden fazla puanlayıcının oluşturduğu bir komisyon karşısında öğrencinin, cevapları sözlü olarak vermesi yoluyla uygulanır. 
+
+--
+
+- Okullarda genellikle bir öğretmenin bir öğrenciyi sınıf önüne çıkararak sınav yapması şekliyle kullanılmaktadır.
+
+--
+
+- Özellikle yabancı dilde konuşma becerisi ölçülmek istendiğinde tek araç sözlü sınavlardır.
+
+---
+## Sözlü Sınavlar
+
+- Sözlü yoklamalarda konuşma yeteneği, anlatım gücü puanlamaya karışabilir.
+
+--
+
+- Sınavı yapan kişinin tepkileri, cevaplayıcının performansını etkileyebilir.
+
+--
+
+- Cevaplayıcının dış görünüşü, konuşma şekli gibi özellikler yanlılığa sebep olabilir.
+
+--
+
+- Genellikle sınıf önünde yapıldığından, her öğrenci için farklı soru hazırlamayı gerektirir. 
+
+---
+## Sözlü Sınavlar
+
+- Maddeler sözlü sorulduğundan cevaplayıcı soruları gözden geçiremez.
+
+--
+
+- Her birey için sınav uygulandığından, uygulama zaman alır.
+
+--
+- Sorular hedef ve davranışlara göre önceden hazırlanmalıdır.
+
+--
+- Puanlaması subjektiftir. Yazılı yoklamada kağıtları tekrar okuma imkanı varken, 
+
+--
+- sözlü yoklamada bu olanak genellikle yoktur.
+
+--
+- Puanlama anahtarı kullanılmalıdır.
+
+--
+-Yanıtlama sorudan hemen sonra gerçekleştiğinden öğrencinin düşünme ve yanıtı gözden geçirme şansı yoktur.
+
+
+---
+## Sözlü Sınavlar
+
+- Sözlü anlatım becerilerinin ölçülmesi gereken durumlarda,
+
+--
+
+- Henüz yazma becerisinin gelişmediği okul öncesi dönemde,
+
+--
+
+- Yabancı dilde iletişim becerisinin ölçülmesinde kullanılmalıdır.
+
+
+---
+## Avantajları
+
+- Öğrencilerin kısa sürede cevap vermesi gerektiğinden hazırcevaplılığı ve yaratıcılığı ön plana çıkarır. 
+
+--
+
+- Öğretmen deneyimli ise soru hazırlamada ve puanlamada fazla zaman harcamaz. 
+
+--
+
+- Küçük yaştaki öğrencilerin yazı yazma becerileri tam olarak gelişmediğinden sözlü sınav yapmak daha uygundur. 
+
+--
+
+- Öğrencilerin bilgi ve kavram yanlışlığını anında belirleme imkanının olduğu tek sınavdır. 
+
+--
+
+- Şans başarısı yoktur. 
+
+
+---
+## Dezavantajları
+
+- Genelde öğrencilere çok fazla soru sorulamamasından dolayı sözlü sınavın geçerliği ve güvenirliği düşüktür. 
+
+--
+
+- Her öğrenciye aynı zorlukta/kolaylıkta soru hazırlamak güçtür
+
+--
+
+- Çekingen ve içine kapanık öğrenciler gerçek bilgilerini yansıtamayabilir.
+
+--
+
+- Öğrencilerin kılık-kıyafet ve sözel becerisi işe karışabilir. Öğretmen buna dikkat etmelidir. 
+
+--
+
+- Bir sorunun ancak bir  cevaplayıcıya sorulaması kullanışlılığı düşürür.
+
+---
+## Kaynaklar
+
+- Albay, L. (2019). Doğru-yanlış testleri. B. Çetin (Ed.), Eğitimde ölçme ve değerlendirme içinde (s. 175-186). Anı.
+
+- Baykul, Y. (2000). Eğitimde ve psikolojide ölçme: Klasik test teorisi ve uygulaması. ÖSYM.
+
+- Doğan, N. (2019). İnsan davranışları ve ölçme araçlarını sınıflama. N. Doğan (Ed.), Eğitimde ölçme ve değerlendirme içinde (s. 31–74). Pegem Akademi.
+
+- Doğan, N. (2019). Geleneksel Ölçme ve Değerlendirme Teknikleri I: Yanıt Seçmeyi Gerektiren Ölçme Araçları. N. Doğan (Ed.), Eğitimde ölçme ve değerlendirme içinde (s. 113–138). Pegem Akademi.
+
+---
+
+.center[
+.hand-large[teşekkürler !]
+
+
+`r emo::ji('thanks')` 
+
+]

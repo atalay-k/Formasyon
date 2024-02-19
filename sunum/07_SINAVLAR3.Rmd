@@ -1,0 +1,856 @@
+---
+title: "`r emo::ji('chart')` EGİTİMDE ÖLÇME VE DEĞERLENDİRME"
+subtitle: " <br> `r emo::ji('graph')` Ölçme Araçları - III"
+author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
+date: "2022-2023 Bahar <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+
+```{r set-theme, include=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color      = "#0F4C81", # pantone classic blue
+  secondary_color    = "#B6CADA", # pantone baby blue
+  header_font_google = google_font("Raleway"),
+  text_font_google   = google_font("Raleway", "300", "300i"),
+  code_font_google   = google_font("Source Code Pro"),
+  text_font_size     = "30px"
+)
+```
+
+```{r, include=FALSE}
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ # tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%d/%m")
+ # tfri <- format(tfri, format="%d/%m")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
+ return(tmp)
+}
+
+library(lubridate)
+options(scipen=999)
+library(tidyverse)
+library(stevemisc)
+mon <- ymd(20220207)
+```
+
+## Çoktan Seçmeli Madde Türleri
+
+.three-column[
+**Doğru Yanıta Göre**
+- Kesin ve Biricik Yanıtı Olan Maddeler
+- En Doğru Yanıtı Bulunduran Maddeler
+- Bileşik Yanıt Vermeyi Gerektiren Maddeler
+- Doğru Yanıtı Gizlenen Maddeler
+]
+
+--
+
+.three-column[
+**Madde Köküne Göre**
+- Kökü Soru Kipinde Olan Maddeler
+- Olumlu Soru Biçimindeki (Olumlu Köklü) Maddeler
+- Olumsuz Soru Biçimindeki (Olumsuz Köklü) Maddeler
+- Kökü Eksik Cümle Tipinde Olan Maddeler
+]
+
+--
+
+.three-column[
+**Maddenin Gruplanışına Göre**
+- Ortak Köklü Maddeler 
+- Ortak Seçenekli Maddeler
+]
+
+---
+## Çoktan Seçmeli Madde Türleri- Doğru Yanıta Göre
+
+
+- **a. Kesin ve biricik doğru yanıtı olan maddeler:** seçeneklerden sadece birinin doğru, diğerlerinin kesinlikle yanlış olduğu maddelerdir. En sık kullanılan madde türlerindendir.
+
+--
+
+- **Örnek:**  a, b, 10, 9, 7, 12, 4, 15,1
+Yukarıdaki sayılar belli bir kurala göre yazılmıştır. Buna göre a ve b harflerinin yerine hangi sayılar gelmelidir?  
+A) a: 14	b: 8  
+B) a: 12	b: 11  
+C) a: 17	b:14  
+D) a:13	b: 6*  
+E) a: 15	b: 7 
+
+
+
+---
+## Çoktan Seçmeli Madde Türleri- Doğru Yanıta Göre
+
+- **b. En doğru yanıtı olan maddeler:*** Bu tür maddelerde verilen seçeneklerin hepsinde doğruluk payı vardır. Seçenekler en doğrudan en az doğruya kadar ifadeler içerir. Yanıtlayıcıdan beklenen en doğru yanıtı bulup işaretlemesidir.  
+
+--
+
+- **Örnek:** Aşağıdaki ifadelerden hangisi ölçme ve değerlendirmenin  eğitim sistemi içindeki yerini daha iyi açıklamaktadır?  
+A) Girdilerin amaca uygunluğunu kontrol eder.  
+B) Sürecin doğru işleyip işlemediğini belirler.  
+C) Sistemin kendini yenilemesini sağlar.*  
+D) Ürünlerin beklenen düzeye yakınlığına karar verir.  
+E) Etkinliklerin yeniden düzenlenmesini sağlar.  
+
+
+---
+## Çoktan Seçmeli Madde Türleri- Doğru Yanıta Göre
+
+- **c. Birleşik yanıt gerektiren maddeler:** Bu tür maddelerde genellikle kökteki sorunun birden fazla yanıtı vardır.  Çoğunlukla  kökünden önce maddeler halinde verilen açıklamalar bulunur.
+
+--
+
+- **Örnek:**
+I.  Madde güçlük indeksinin değeri artarsa soru kolaylaşır.  
+II. Madde güçlüğü ile testin ortalama güçlüğü arasında pozitif bir korelasyon vardır.  
+III. Madde güçlüğü -1 ile 1 arasında değerler alır
+IV. Madde güçlüğü 1´e yakın olan maddelerden oluşan bir testin ortalaması yüksek olur.  
+V. En ideal madde güçlüğü “1” civarında olan maddedir.   
+Yukarıda madde güçlüğü ile ilgili verilen bilgilerden hangileri yanlıştır?
+
+  A) I ve IV &nbsp;&nbsp;&nbsp; B) II ve III &nbsp;&nbsp;&nbsp; C) III ve V* &nbsp;&nbsp;&nbsp;  D) IV ve V  &nbsp;&nbsp;&nbsp;  E) II ve V
+
+
+---
+## Çoktan Seçmeli Madde Türleri- Doğru Yanıta Göre
+
+- **d. Doğru yanıtı gizlenen maddeler:** bazen testi hazırlayanlar yanıtlayıcının doğru yanıtı görünce hatırlamasını değil de kendisinin hatırlayabilmesini isteyebilirler. Bu durumda seçeneklerde verilen yanıtlar kodlama şeklinde verilebilir.
+
+- **Örnek:**
+Mutlak başarı oranı, kullanılan ölçme aracından öğrencinin aldığı  puanın, ölçme sonucunda alınabilecek en yüksek puana bölümü ile  elde edilir.
+Buna göre en çok 30 puan alınabilen bir sınavdan 20 puan alan bir öğrencinin mutlak başarı oranının virgülden sonraki birinci  değeri kaçtır?  
+
+  A) 3 &nbsp;&nbsp;&nbsp; B) 4 &nbsp;&nbsp;&nbsp; C) 6*   &nbsp;&nbsp;&nbsp; D) 7  &nbsp;&nbsp;&nbsp; E) 9
+
+
+---
+
+## Çoktan Seçmeli Madde Türleri- Madde Köküne Göre Sınıflama
+
+- **a. Kökü soru kipinde olan maddeler:** Kökü bir soru cümlesi biçiminde olan maddelerdir.
+
+- **Örnek:** Ülkemizde depremden sonra en çok can ve mal kaybına neden olan doğal afet aşağıdakilerden hangisidir?  
+A) Erozyon  
+B) Sel  
+C) Volkanizma  
+D) Kaya Düşmesi  
+E) Orman Yangını  
+
+
+---
+
+## Çoktan Seçmeli Madde Türleri- Madde Köküne Göre Sınıflama
+
+- **b.  Kökü olumsuz soru kipinde olan maddeler:** Madde kökünün olumsuz ifade edildiği madde yapısıdır. Olumsuz ifadeler dikkat çekecek şekilde yazılmalıdır.
+
+- **Örnek:** Aşağıdakilerden hangisi bir ölçme işlemi **değildir?**
+
+  A) Yazılı yoklama sınavını 1’den 10’a kadar puanlamak   
+  B)  Yüksek lisans programına öğrenci kabul etmek için   koşulları belirlemek  
+  C)  Sözlü sınavda soruyu en iyi cevaplayan öğrenciye en yüksek puanı vermek  
+  D)  Sınıftaki öğrencileri boy sırasına dizmek  
+  E)  Öğrencilerin başarı düzeylerini belirlemek 
+
+
+---
+
+## Çoktan Seçmeli Madde Türleri- Madde Köküne Göre Sınıflama
+
+- **c.  Kökü eksik cümle biçiminde olan maddeler:** Maddenin kökünün yarım bırakıldığı ve seçeneklerden bir tanesinin bu kökü olarak doğru olarak tamamladığı soru tipleridir. 
+
+- **Örnek:** Doğru- Yanlış testlerinin kısa yanıtlı testlere göre en önemli sınırlılığı ........  
+  Yukarıdaki cümlede bırakılan boşluğu tamamlamaya uygun ifade            aşağıdakilerden hangisidir? 
+
+  A) Hazırlanmasının zor olmasıdır.  
+  B) Puanlanmasındaki zorluklardır.  
+  C) Uygulanmasındaki güçlüklerdir.  
+  D) Kapsam geçerliğinin düşük olmasıdır.  
+  E) Şans başarısının çok yüksek olmasıdır.*  
+
+
+---
+
+## Çoktan Seçmeli Madde Türleri - MAddelerinin Gruplaşına Göre 
+
+- **a. Ortak kökü maddeler:** Bir paragraf, tablo, grafik gibi materyale özgü birden fazla sorunun soruduğu madde formlarıdır.
+
+- **b. Ortak seçenekli maddeler:** Seçeneklerin ortak, madde köklerinin farklı olduğu soru tipleridir.
+
+
+
+---
+
+## Çoktan Seçmeli Madde Türleri - MAddelerinin Gruplaşına Göre 
+
+- 1. ve 2. soruları aşağıdaki bilgilere göre cevaplayınız.
+
+- Aşağıdaki tabloda 5 seçenekten oluşan bir maddenin seçeneklerine  ilişkin frekans değerleri verilmiştir.
+
+|   |  A |  B | C  |  D | E  |  Toplam |
+|---|---|---|---|---|---|---|
+| Üst Grup  |  14 | 6  |  7 | 10  | 3  | 40  |
+| Alt Grup  |  2 |  4 | 11  | 10  |  13 |  40 |
+
+1. Yukarıdaki maddede doğru cevap hangi seçenekte olursa ayırt edicilik en yüksek olur?
+  A) A  &nbsp;&nbsp;&nbsp; B) B  &nbsp;&nbsp;&nbsp; C) C &nbsp;&nbsp;&nbsp; D) D  &nbsp;&nbsp;&nbsp; E) E
+
+2. Yukarıdaki maddenin doğru cevabı D seçeneği ise, madde güçlük indeksi kaç olur ?
+  A) 0.00  &nbsp;&nbsp;&nbsp; B) 0.10  &nbsp;&nbsp;&nbsp; C) 0.15  &nbsp;&nbsp;&nbsp; D) 0.20  &nbsp;&nbsp;&nbsp; E) 0.25
+
+
+
+---
+
+## Çoktan Seçmeli Madde Türleri - MAddelerinin Gruplaşına Göre 
+- **Ortak Seçenekli Maddeler**
+
+  A) Sabit Hata &nbsp;&nbsp;&nbsp;&nbsp; B) Sistematik Hata   &nbsp;&nbsp;&nbsp;&nbsp; 
+  C)Tesadüfi Hata &nbsp;&nbsp;&nbsp;
+    
+  D) Standart Hata  &nbsp;&nbsp;&nbsp; E) Ortalama Hata
+1. ve 2. yukarıdaki seçeneklere göre cevaplayınız.
+
+  1. Verilen seçeneklerden hangisi ölçme sonuçlarının değişkenliği ile ilgilidir? (D)  
+
+  2. Hangi hata türünün yönü ve miktarını kestirmek mümkün değildir? (C)
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Şans başarısı seçenek sayısına bağlıdır (5 seçenek=%20 şans).
+
+--
+
+- Hazırlanması uzun zaman alır. Çoktan seçmeli test maddesi hazırlamak ve bu maddelerden Şans başarısı seçenek sayısına bağlıdır (5 seçenek=%20 şans).
+
+--
+
+- Hazırlanması uzun zaman alır. Çoktan seçmeli test maddesi hazırlamak ve bu maddelerden testler oluşturmak bilgi ve tecrübe gerektirir.
+
+--
+
+- Puanlanması kolay ve objektiftir. Bu nedenle, çoktan seçmeli testlerde puanlama güvenirliği
+oldukça yüksektir.
+
+--
+
+- Uygulama süresinin kısa olması cevaplayıcının dikkatinin dağılmadan cevaplamasına olanak verir.
+
+--
+- Cevaplama işlemi fazla zaman almadığı için çok sayıda soru sorulabilir. Böylece kapsama konu olan davranışlar yeterli derecede temsil edilebilir.
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Maddeler açık ve anlaşılır olmalı, “çoğunlukla, bazen, sık sık” gibi göreceli ifadeler dikkatli
+kullanılmalıdır. Çünkü, verilen belirsiz kelimeler görecelidir ve bu nedenle kişiden kişiye farklılık
+gösterir.
+
+--
+
+- Maddeleri yazarken noktalama ve yazım kurallarına uyulmalı böylece maddelerin farklı şekillerde algılanması engellenmelidir.
+
+--
+
+- Her bir madde tek davranışı ölçmelidir.
+
+--
+
+- Sorular birbirinden bağımsız bir şekilde cevaplandırılabilmelidir. Bir soru için ipucu olabilecek bir ifade başka bir soruda verilmemelidir.
+
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Uygulama zamanının çoğu okumaya ayrıldığı için, her madde mümkün olduğunca az kelime ile
+yazılmalıdır. Maddelerin kökünde gereksiz ifade ve açıklamalardan kaçınılmalıdır.
+
+--
+
+- **Örnek:** Testin birçok özelliği vardır. Geçerlik ve güvenirlik bu özelliklerden ikisidir. Testin kapsam
+geçerliğini sağlamak için aşağıdakilerden hangisine öncelikle dikkat etmek gerekir?  
+A) Öğrencilerin yeteneklerine  
+B) Testin güvenirliğine  
+C) Madde sayısına  
+D) Öğretimin kalitesine  
+E) Ölçülecek davranışlara*  
+
+--
+
+- **Not:** Madde kökündeki ilk iki cümle gereksizdir. Hem maddeyi okurken zaman kaybına neden
+olmakta, hem de bu cümlelerde yer alan güvenirlik kavramı, cevaplayıcıları yanıltarak B
+seçeneğine yönlendirebilmektedir.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Her test maddesi diğerlerinden bağımsız cevaplanacak şekilde yazılmalıdır. Bir maddede verilen
+bilgiler, diğer bir maddenin cevabını açıklamamalıdır.
+
+--
+
+- **Örnek:** 
+
+  **6.** Aşağıdakilerden hangisi bir geçerlik katsayısı olamaz?
+  
+      A) 1.09* &nbsp;&nbsp;&nbsp; B) 0.86 &nbsp;&nbsp;&nbsp; C) 0.03 &nbsp;&nbsp;&nbsp;
+      D) 0.00  &nbsp;&nbsp;&nbsp; E) -0.25
+
+  **9.** Geçerlik -1, +1 arasında değer aldığına göre, güvenirlik katsayısı 0.90 olan bir testin ölçüt geçerliği en çok kaç olabilir?
+  
+      A) 0.71* &nbsp;&nbsp;&nbsp; B) 0.66 &nbsp;&nbsp;&nbsp; C) 0.25 &nbsp;&nbsp;&nbsp;
+      D) -0.35 &nbsp;&nbsp;&nbsp; E) -0.65
+
+--
+
+- **Not:** 6. soruda ölçülmek istenen davranış, geçerlik katsayısının sınırlarının bilinmesidir. Geçerlik katsayısının sınırları 9. sorunun madde kökünde verilmiştir.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Madde kökü eksik cümleden ziyade tam cümleden oluşan soru şeklinde yazılmalıdır. Eksik
+cümle kullanıldığı durumlarda ise, madde kökü mümkün olduğunca tam cümleye yakın
+olmalıdır. Ölçülmek istenen özelliğe sahip bireyler madde kökünü okudukları zaman
+seçeneklere bakmadan doğru cevabı verebilmelidirler.
+
+- **Örnek:** Kısa yanıtlı maddeler.....?  
+  A) Üst düzey davranışları ölçer.  
+  B) Şans başarısı düşüktür.  
+  C) Puanlama objektiftir.*  
+  D) Kapsam geçerliği düşüktür.  
+  E) Hazırlaması çok kolaydır.  
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Madde kökünde olumsuz ifadeler yerine olumlu ifadeler tercih edilmelidir. Olumlu maddeler
+arasına dağıtılan olumsuz maddeler (özellikle **-ma** hecesi ile olumsuzlaştırılanlar), dikkat
+dağıldıkça öğrenciler tarafından olumlu gibi algılanabilir. Olumsuz ifadelerin kullanılması
+durumunda ise, olumsuz ifadelerin dikkat çekecek şekilde belirtilmesi uygun olur. 
+
+- Bunun için **koyu yazım**, *italik yazım*, **BÜYÜK HARF** veya alt çizmekle olumsuzluk belirgin hale getirilebilir.
+
+- **Örnek:** 11, 12, 12, 16, 20, 24, 30 dağılımında 30 değerini 40 değeri ile değiştirirsek bu dağılıma ait aşağıdaki istatistiklerden hangisi değişmez?
+
+  A) Medyan &nbsp;&nbsp;&nbsp; B) Ortalama &nbsp;&nbsp;&nbsp; C) Ranj &nbsp;&nbsp;&nbsp;
+  D) Standart sapma &nbsp;&nbsp;&nbsp; E) Varyans
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Anlamlı bir sıraya koyulabilecek seçenekler, bu sıraya göre yerleştirilmelidir.
+
+- Örneğin, seçenekler arasında büyüklük sırası varsa, seçenekler küçükten büyüğe veya büyükten
+küçüğe sıralı olarak verilmelidir.
+
+- Örneğin tek kelimeli seçeneklerde, seçenekler alfabetik olarak sıralanabilir.
+
+- **Örnek:**
+$$\frac{2}{1-\frac{2}{3}} - \frac{3}{1-\frac{1}{2}}$$
+
+ işleminin sonucu kaçtır?
+ 
+ A) -1  &nbsp;&nbsp;&nbsp; B) 0 &nbsp;&nbsp;&nbsp; C) 1 &nbsp;&nbsp;&nbsp; 
+ D) 4  &nbsp;&nbsp;&nbsp;  E) 5
+???
+Seçenekler belirli bir mantığa göre okumayı kolaylaştıracak şekilde sıralanmalı. 
+Amacımız, ölçmek istediğimiz beceri/kazanım dışında hiçbir faktörün sonuçları etkilememesi için çaba göstermek. 
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Maddelerin seçenekleri ifade bakımından olabildiğince birbirine paralel olmalıdır.
+
+- Bir maddenin seçeneklerinde tekrar eden kelimeler kullanılmamalı, seçeneklerde tekrar eden
+kelimeler madde köküne alınmalıdır.
+
+- **Örnek:** T puanı 60 olan bir öğrenci ile ilgili olarak aşağıdaki yorumlardan hangisi yapılabilir? 
+  A) 100 sorudan 60 soruyu doğru yapması.  
+  B) Soruların %60´ını doğru yapmıştır.  
+  C) Ortalamanın üstünde puan almıştır.  
+  D) Sınıfta 60 kişiyi geride bırakmıştır.  
+  E) Z puanı negatif değerdedir.  
+
+- **Not:** A seçeneğindeki ifade diğer seçeneklerdeki ifadelere eşit değildir. A seçeneğindeki
+“yapması” kelimesi “yapmıştır” kelimesi ile değiştirilmelidir.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Seçenekler birbirinden bağımsız olmalı, biri diğerini içermemeli, birbirlerine ipucu vermemelidir.
+
+- Böyle bir durumdan kaçılamıyorsa, çoktan seçmeli madde türü değiştirilmelidir. Örneğin, bileşik
+cevap gerektiren madde türü kullanılabilir.
+
+- **Örnek:** Aşağıdakilerden hangisi çoktan seçmeli testler için geçerli değildir?
+  A) Güvenirlik düşüktür.*
+  B) Puanlardaki hata azdır.
+  C) Puanlanması objektiftir.
+  D) Şans başarısı vardır.
+  E) Yansız puanlanabilir.
+  
+- **Not:** B, C ve E seçenekleri birbirine bağımlıdır. Objektif ve yansız puanlama birbirinin aynıdır ve puanlardaki hatanın az olması puanlamanın objektifliğine bağlıdır.
+
+---
+## Çoktan Seçenekli Maddeler
+
+- **Yukarıdakilerin hepsi** seçeneği dikkatli kullanılmalı, en doğru cevabı gerektiren maddelerde
+kullanılmamalıdır. Seçeneklerden herhangi birinin yanlış ( bu durumda yukarıdakilerden hepsi
+seçeneği elenir) veya ikisinin doğru (bu durumda geride kalan seçeneklere bakılmaz) olduğu
+açıkça görüldüğünde şans başarısı artacak, güvenirlik de düşecektir.
+
+- **Yukarıdakilerin hepsi** seçeneği seçeneklerin birbirine çok yakın olduğu maddelerde
+kullanılabilir.
+
+- **Örnek:** Yerel bir radyoya sınavla spiker alınacaktır, bu sınav için aşağıdakilerden hangisi en uygun olur?
+
+  A) Çoktan seçmeli &nbsp;&nbsp;&nbsp; B) Kısa yanıtlı &nbsp;&nbsp;&nbsp; C) Sözlü* &nbsp;&nbsp;&nbsp; D) Yazılı &nbsp;&nbsp;&nbsp; E) Hepsi
+
+- **Örnek:** Aşağıdakilerden hangisi güvenirlik türlerinden biri **değildir?**
+
+  A) Görünüş &nbsp;&nbsp;&nbsp; B) Kapsam &nbsp;&nbsp;&nbsp; C) Ölçüt &nbsp;&nbsp;&nbsp;D) Yapı &nbsp;&nbsp;&nbsp; E) Hepsi*
+  
+
+---
+## Çoktan Seçenekli Maddeler
+
+- **Yukarıdakilerin hiçbiri** seçeneği dikkatli kullanılmalı, en doğru cevabı gerektiren maddelerde kullanılmamalıdır. Seçeneklerden herhangi birinin doğru ( bu durumda yukarıdakilerden hiçbiri seçeneği elenir) veya ikisinin yanlış (bu durumda geride kalan seçeneklere bakılmaz) olduğu açıkça görüldüğünde şans başarısı artacak, güvenirlik de düşecektir.
+
+
+- **Yukarıdakilerin hiçbiri** seçeneği doğru yanıt olarak kullanılmamalıdır.
+Bir öğretmen sınav kağıtlarını puanlarken öğrencilerin puanlarını, aldıkları puanların yüzde 5´i
+kadar artırırsa, bu durum hangi hata türüne örnek olabilir?
+
+  A) Sabit &nbsp;&nbsp;&nbsp; B) Sistematik* &nbsp;&nbsp;&nbsp; C) Standart &nbsp;&nbsp;&nbsp; D) Tesadüfi &nbsp;&nbsp;&nbsp;E) Hiçbiri
+  
+---
+## Çoktan Seçenekli Maddeler
+
+- Birbirinin zıddı ve ya birbirini açıklayan seçenekler kullanılmamalıdır. Seçenekler akla uygun ve mantıklı olmalıdır.
+
+--
+
+- Çeldiriciler sadece bilmeyeni ve yanlış bileni yanıltmalıdır.
+
+--
+
+- Testin tüm maddelerinin seçenek sayısı aynı olmalıdır.
+
+--
+
+- Ard arda aynı seçeneğe çok sayıda doğru cevap getirilmemelidir.
+
+--
+
+
+- Seçenek sayısı öğrenci düzeyine uygun olmalı. İlköğretim ikinci sınıfında 2-3, üçüncü sınıfında
+3-4, dördüncü ve daha yukarı sınıflarında 4 seçenek uygun olur.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Çoktan seçmeli maddelerden oluşan bir test hazırlanırken, doğru cevapların belli bir şekil,
+desen, vb. çağrıştıracak bir biçimde yerleştirilmemelidir. Eğer cevaplayan ilk yapmış olduğu
+sorularda bu düzeni yakalarsa, diğer soruları okumadan doğru cevabı bulabilir.
+
+--
+
+- Doğru cevaplar seçeneklere yaklaşık olarak eşit dağıtılmalıdır. Beş seçenekli bir testi tamamen
+tahminle cevaplandıran bir bireyin alması beklenen başarı düzeyi %20 olmalıdır. Düzeltme
+formülü uygulandığında, tahminle cevaplayan bireyin puanı sıfır olmalıdır.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+
+- Aynı seçeneğe arda arda çok sayıda doğru yanıt getirilmemelidir. Doğru cevapların aynı
+seçeneğe ardı ardına 2 veya 3 kez getirilmesi uygun olabilir ancak bu sayı arttığında doğru
+cevabı bilen bireyleri şaşırtmaktadır.
+
+--
+
+- Bir testteki bütün maddeler, aynı düzen içerisinde verilmelidir. Özellikle maddeler arasındaki
+boşluklar iyice fark edilebilecek düzeyde bırakılmalıdır. Madde kökü ile seçenekler arasında her
+maddede aynı ayarda boşluk bırakılmalıdır. Seçenekler arasında bırakılan boşluklar da bütün
+maddelerde benzer olmalıdır.
+
+--
+
+- Ortak köklü ve ortak seçenekli soruların diğer sorularla karıştırılmaması için başlangıcında ve
+bitiminde bir çizgi ile ayrılması uygun olabilir. Ayrıca, bu tipteki soruların ortak olan kök ve
+seçenekler ile aynı sayfada bulunması dikkatin dağılmasını önleyebilir.
+
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+
+Birçok kişi yüksek bilişsel düzeyde madde yazmak için mutlaka uzun cevaplı madde tipinde
+madde kullanmak gerektiğini düşünür. Çoktan seçmeli madde tipinde de yüksek bilişsel düzeyde
+madde yazmak mümkündür. Ancak çoktan secmeli maddelerde genellikle analiz düzeyi üzerine
+çıkmak oldukça zordur.
+
+- Ezber gerektirmeyen maddelerin bircoğu orta veya yüksek bilişsel düzey gerektiren
+maddelerdir.
+- Herhangi bir madde çözümünde
+- Problem çözmek,
+- Analiz yapmak,
+- Çıkarım yapmak,
+- Yorum yapmak
+- Kendi kelimeleri ile ifade etmek,
+- Kurgulamak,
+- Degerlendirmek
+- gerektiriyorsa boyle maddeler yuksek seviyeli maddelerdir.
+
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Bilişsel Düzey Nasıl Yükseltilebilir?  
+
+  - Coktan secmeli madde tipi degistirilebilir.
+  
+  - Ortak koklu sorular sorulabilir, şekil, tablo, veya grafikler, tamamlattirilabilir, yorumlattirilabilir).
+
+  - Bilesik yanit vermeyi gerektiren sorular sorulabilir.
+  
+  - Secenek bulmakta zorlanildiginda da kullanilabilir
+  
+  - Bu tip sorular genelde daha zor sorulardir
+
+???
+  - Cogu kez karsilastirma gerektirdigi icin bilissel seviye olarak bilgi seviyesinin ustunde
+sorulardir.
+
+  - Soru tipi degistirilebilir.
+  - Coktan secmeli yerine kisa cevapli, uzun cevapli sorular sorulabilir.
+  - Her kisa/uzun cevapli soru yuksek bilissel seviyeyi olcmez.
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Bilişsel Düzey Nasıl Yükseltilebilir?  
+
+- Benzerlik veya farklılıkları vurgulayan sorular sorulabilir (Kavramları, olguları, olayları
+değerlendirerek karşılaştırmayı gerektiren sorular sorulabilir)
+
+  - Örnek: Listelenmiş cisimleri canlılar veya cansızlar olarak sınıflandırmayı gerektiren sorular
+  - Örnek: Metallerin özelliklerini belirtmeyi gerektiren sorular yerine metallerin ayırt edici
+özelliklerini karşılaştırmayı gerektiren sorular
+
+  - Uyarlama gerektiren sorular (Bir yeniliğin veya değişimin uygulanmasıyla ilgili sorular sorulabilir,
+bir fikir farklı bir biçime çevrilerek sorulabilir)
+   - Örnek: Dünyadaki ağırlık ile aydaki ağırlığın farklı olduğuna odaklanan sorular
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Maddelerin Bilişsel Düzeyi Nasıl Yükseltilebilir?
+
+- Sıradışı ve yaratıcı fikirler gerektiren sorular sorulabilir.
+- Örnek: Ay ve güneşin ışık kaynağı olarak değerlendirilmesi
+- Örnek: Atmosferde oksijen gazı %21 değil de % 78 oranda olsaydı ne olurdu?
+Sebep-sonuç ilişkilerine odaklanan sorular sorulabilir (Öğrencilere bir cevabın neden doğru
+olduğunu sorulabilir).
+
+- Örnek: Üzeri bir kavanozla kapatılan mum söner evet ama neden?
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+Maddelerin Bilişsel Düzeyi Nasıl Yükseltilebilir?
+Tek cevaplı kapalı uçlu sorular yerine, öğrencileri dikkatli bir analize yönelten birden fazla doğru
+cevabı olan, açıklama yapmalarına olanak sağlayacak sorular sorulabilir.
+- Örnek: Doğal kaynakların kullanım alanlarının açıklanması veya doğal kaynakların
+korunması için yapılması gerekenleri ayırt edebilme
+- Örnek: Canlılar için uygun yaşama ortamlarını tasarlayabilme
+- Örnek: Bazı nehirlerin yazın kuruyup kışın aktif halde olmalarının sebebini açıklayabilme
+
+---
+## Uzman Görüşü
+
+- Üretim süreci enerji ve yaratıcılık gerektirir. Bu durum madde yazarının maddeye eleştirel bir gözle ayrıca bakmasını zorlaştırır.
+
+- Kişi kendi ürünündeki eksiğini görmez.
+
+- Madde yazım önerilerini kişiselleştirmeyelim; alınganlık etmeyelim.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Test Kapsamını Önceden Belirleyelim
+
+- Test kapsamına maddeleri yazmaya başlamadan önce karar verelim.
+
+- Hangi konudan, hangi kazanımdan, hangi beceriden kaçar soru sorulacak?
+
+- Bu kararın üzerinde sonradan küçük değişiklikler yapılabilir.
+
+---
+## Türkçe yazım kurallarına uyalım.
+
+.center[
+
+.large[bağlaçlarıayrıyazmakta cümleye büyük harflebaşlamakta zordeyil!.]
+
+]
+
+---
+## Çoktan Seçenekli Maddeler
+
+- 
+- “Bu soru ne ölçüyor?” sorusu sürekli aklımızda olmalı.
+
+- Bu soruya savunulabilir bir cevabımız olmalı.
+
+- Kazanım(lar)
+
+- Üst düzey düşünme becerileri
+
+- ‘Ezber’ sormayalım.
+
+---
+## Üslup nasıl olmalı?
+
+-  Doğrudan
+
+- Yalın
+
+- Net
+
+- Kolay okunur
+
+- Kolay anlaşılır
+
+- Peki nasıl?
+
+---
+## Üslup nasıl olmalı?
+
+- Gerektiğinde cümleleri bölerek veya fazla sözcükleri atarak cümlelerimizi kısaltalım. Okuma yükünü azaltalım
+
+- (Mümkün olduğunca) edilgen çatıdan kaçınalım.
+
+- Seyrek kullanılan kelimeleri tercih etmeyelim. (‘Üslup’ gibi mesela.)
+
+- Gramer bakımından olumsuz sözcükler yerine anlamı olumsuz fakat gramer olarak düz sözcükleri tercih edelim.
+
+- ‘Tercih etmemek’ yerine ‘kaçınmak’
+
+- ‘Doğru değildir’ yerine ‘yanlıştır’
+
+
+---
+## Üslup nasıl olmalı?
+
+
+- “Ama ben şöyle demek istemiştim.”
+
+- Metni okuyan meslektaşınız soruda ifade edilenin iki ayrı anlama gelebileceğini söylüyorsa soruda ifade edileni anlamak için sizin sözel açıklamalarınıza ihtiyaç duyuyorsa o soru metni, okuyan öğrencilerin anlayabileceği, tek şekilde anlayabileceği şekilde değiştirilmelidir.
+
+- Öğrenciler sınava girdiklerinde, bizim sözel açıklamalarımıza ulaşamazlar.
+
+---
+## Çoktan Seçenekli Maddeler
+
+- ...değildir? … kullanılmamıştır?
+
+- Gramer olarak olumsuz sözcükleri kullanmamız gerekirse altını çizelim (ki gözden kaçmasın).
+
+- Sorunun çözümü için elzem ve gözden kaçabilecek olduğunu düşündüğümüz sözcüklerin de
+altını çizebiliriz.
+
+- A, B ve C ardışık birer rakam olmak üzere…
+
+- Dikkat, ölçmek istediğimiz bir yapı değil.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+
+- Olumsuz sözcüklerin altını çizmekteki amacımız ölçme sonuçlarına “dikkat” faktörünün etkisini kaldırmak.
+
+- Başarı, beceri, yeterlik, yetenek, kazanımların edinilme derecesi gibi kavramları ölçmek istiyoruz.
+
+  - Dikkati değil.
+
+- Olumsuz sözcüklerin altını çizmekteki amacımız ölçme sonuçlarına “dikkat” faktörünün etkisini kaldırmak.
+
+- Başarı, beceri, yeterlik, yetenek, kazanımların edinilme derecesi gibi kavramları ölçmek istiyoruz.
+
+- Dikkati değil. Çelme Takma!
+
+???
+
+A+B+C’nin rakamları toplamı kaçtır?
+Evren’in ablasının yaşı kaçtır?
+Olası bir dalgınlıkla bulunabilecek sayıyı seçeneklere koymayalım.
+Kavram yanılgısı, hatalı bilgi nedeniyle ulaşılabilecek sonuçları ise seçeneklere koymayı seviyoruz.
+Çeldirici, soru metninde yer alan, adayları yanlışa sevk edecek bilgi DEĞİLDİR. Çeldirici yalnızca
+doğru olmayan seçeneklere denir.
+
+---
+## Çoktan Seçenekli Maddeler - HIZ
+
+
+- Hız da ölçmek istemediğimiz, ölçme sonuçlarına karışmasına engel olmak istediğimiz bir kavram.
+
+Bu nedenle,
+- kolay ama çözmesi uzun süren
+- İşlem kalabalığı fazla
+- rutin işlem basamaklarının tekrarlandığı
+- sorular yazmaktan kaçınalım.
+
+- Türkçe paragraf sorularında adayların zaman nedeniyle mağdur olmalarını engelleyelim. Çok uzun metinler kullanmayalım. (Karakter saydırma, ön deneme vs.)
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Seçenek sırası
+
+- Seçenekler belirli bir mantığa göre okumayı kolaylaştıracak şekilde sıralanmalı.
+Amacımız, ölçmek istediğimiz beceri/kazanım dışında hiçbir faktörün sonuçları etkilememesi için
+çaba göstermek.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Hepsi, hiçbiri, hepbiri
+
+- ‘Yukarıdakilerin hepsi’, ‘aşağıdakilerin hiçbiri’, ‘yan taraftakilerin bazıları’ gibi uygulamalar genel
+olarak tasvip edilmez; gerek yok.
+
+- Hele hele ikisini bir arada kullanmak…
+- Ankara
+- İzmir
+- Yukarıdakilerin hepsi
+- Yukarıdakilerin hiçbiri
+Seçenekler
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Hem kendi aralarında hem de soru kökü ile uyumlu olmalı.
+
+- Bir diyalogun parçaları gibi rahat ve akıcı biçimde okunabilmeli.
+
+- Doğru cevap en uzun seçenek olmamalı.
+
+- Mümkün olduğunca seçeneklerin uzunlukları birbirine yakın olmalı
+
+- Seçeneklerin hepsinde tekrarlanan sözler soru köküne almaya çalışalım (özel durumlar hariç)
+
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Bir soru, bir başka sorunun cevabını “açık etmesin”.
+
+- Kitapçıkta ve aynı proje kapsamında hazırlanan testlerde bir dil ve ifade birliği olmalı.
+- “Yukarıda verilenlerden hangileri doğrudur?’”
+- “Yukarıdakilerden hangileri doğrudur?”
+- “… ile ilgili olarak aşağıdakilerden hangisi…”
+- “… ile ilgili olarak aşağıdakilerden hangisi…”
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Ülkenin genelinde öğrencilerin aşina olmayabileceği kavramları soru bağlamlarında
+kullanmayalım. Bölgesel, yöresel terimler, kavramlar kullanmayalım.
+Yalnızca erkek öğrencilerin aşina olacağı lig gibi fikstür gibi futbol gibi kavramları soru bağlamına almayalım. Benzer beceri düzeyindeki kız ve erkek öğrencilerin bir maddedeki performansının farklılaşması önemli bir test geçerliği tehdididir.
+
+- Otantik, gerçek hayata yakın
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+- Soruları gerçek hayat problemlerini yansıtacak şekilde otantik, orijinal ve üst düzey düşünme
+becerilerini içerecek şekilde tasarlayalım. (Zor olmasını kastetmiyoruz.)
+Sorularda günlük hayatı seviyoruz.
+
+- Sorularda şekil ve kullanmayı işe yarıyorsa, anlaşılmayı kolaylaştırıyorsa seviyoruz. Soruların
+içinde işe yaramayan şekilleri, tabloları, sözcükleri, cümleleri sevmiyoruz.
+
+- Sorularda şekil ve kullanmayı işe yarıyorsa, anlaşılmayı kolaylaştırıyorsa seviyoruz. Soruların
+içinde işe yaramayan şekilleri, tabloları, sözcükleri, cümleleri sevmiyoruz.
+
+
+---
+## Çoktan Seçenekli Maddeler
+
+
+- Çift olumsuz
+- I. … yapılmaması
+- II. … edilmesi
+- III. … gidilmemesi
+
+Yukarıdakilerden hangileri … değildir?
+
+
+---
+## Test Düzenlenmesinde İlkeler
+
+1. İsim ve/veya numara için yer ayır
+
+2. Maddeler seçenekleri ile aynı sayfada olmalı
+
+3. Benzer türdeki maddelerin tamamı bir arada olmalı
+
+4. Maddeler kolaydan zora doğru sıralanmalı
+
+5. Yazı puntosu, satır aralıkları ve maddeler arası boşluklar iyi ayarlanmalı
+
+6. Madde ya da maddelere ilişkin görseller maddeden önce ve mutlaka aynı sayfada yer
+almalıdır
+
+7. Yönergede ( madde sayısı, yanıtlama şekli, süre ve ölçme kuralları yer almalıdır.
+
+---
+## Test Uygulanmasında İlkeler
+
+- Dikkat dağıtıcı unsurları en aza indirin.
+
+- Kuralları açıklayın.
+
+- Olumlu bir tavır takının.
+
+- Süreyi tüm kitapçıkları dağıtıp öğrencilerin kitapçıkları kontrol etmesini sağladıktan sonra
+başlatın.
+
+- Uygulama süresinde kopyanın önüne geçmek için gerekli tedbirler alın.
+
+

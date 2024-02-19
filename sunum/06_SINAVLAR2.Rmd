@@ -1,0 +1,363 @@
+---
+title: "`r emo::ji('graph')` EGİTİMDE ÖLÇME VE DEĞERLENDİRME"
+subtitle: " <br> `r emo::ji('time')` Ölçme Araçları - II"
+author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
+date: "2022-20223 Guz <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+## Kısa Cevaplı Maddeler
+
+- Cevaplayıcının cevabı **bir kelime, bir sembol, bir rakam** ya da bir cümle ile ifade edeceği sınav türleridir.
+
+--
+
+- Cevapların kısa olması **soruların fazla** olmasını sağlar. 
+
+--
+
+- Cevaplar kısa olduğu için **üst düzey davranışların yoklanması zordur.**
+
+--
+
+- Temel olarak, **soru tipindeki ve kökü eksik maddeler** olmak üzere ikiye ayrılırlar. 
+
+
+---
+## Kısa Cevaplı Maddele
+
+- **Soru tipindeki maddeler:** Kökü soru ifadesi ile biten maddelerdir. Ne, ne zaman, kim, nerede gibi ifadelerle kullanılır.
+
+--
+
+  - **Örnek:** Bir niteliğin gözlenerek, gözlem sonuçlarının sayı ya da başka sembollerle ifade edilmesine ne denir?
+  
+--
+
+- **Eksik cümle yapısında olan maddeler:** Cevaplayıcıların cümle ya da paragraflarda, boş bırakılan yere uygun sözcük ya da sözcükleri yazması gereken soru tipleridir.
+
+--
+
+  - **Örnek:** Bir niteliğin gözlenerek, gözlem sonuçlarının sayı yada başka sembollerle ifade edilmesine ................... denir.
+
+
+---
+## Kısa Yanıtlı Maddelerin Yazılmasında Dikkat Edilmesi Gereken Noktalar
+
+- Kısa yanıtlı maddelerde soru tartışma yaratmayacak bir biçimde yapılandırılmalı, açık ve kolay anlaşılır bir ifadeyle sunulmalıdır. 
+
+--
+
+- Sorular bireyler tarafından farklı algılanmamalıdır.
+Kısa yanıtlı maddelerde bir kazanım yoklanmalı, sorunun yalnızca bir yanıtı olmalıdır.
+
+--
+  - **Örnek:** ………. ………. ………. yazılı sınavlara göre kapsam geçerliği daha yüksektir. (çoktan seçmeli testlerin, kısa yanıtlı sınavların)
+
+???
+Not: “Bu maddede sorunun birden fazla yanıtı vardır. Yanıtlama için ayrılan kısımda iki ayrı yanıt mı verilecek yoksa tek bir yanıt mı verileceği belirsizdir. Bu belirsizlik boşluklar arasına virgül koyularak giderilebilir. Ayrıca birden fazla yanıt bekleniyorsa her bir yanıt ayrı puanlanmalıdır.
+
+
+---
+## Kısa Yanıtlı Maddelerin Yazılmasında Dikkat Edilmesi Gereken Noktalar
+
+- Kısa yanıtlı maddelerde yoklanmak istenen davranış, önemli bir davranış olmalıdır. Kıyıda köşede kalmış bilgiler yoklanmamalıdır.
+
+
+--
+
+Maddeyi kolayca yanıtlamayı sağlayacak gereksiz bilgilerden ve cevaplayanın yanıtı bulmasını kolaylaştıracak ipuçlarından kaçınılmalıdır.
+
+--
+
+- **Örnek:** Çoktan seçmeli testlerin kapsam geçerliği yazılı sınavlara göre daha ……….tir. (yüksek)
+
+???
+Not: Bu maddede cümlenin sonundaki “tir” eki cevabın yüksek olarak verilme olasılığını güçlendirmektedir. 
+
+
+---
+## Kısa Yanıtlı Maddelerin Yazılmasında Dikkat Edilmesi Gereken Noktalar
+
+- Testte yer alan bir maddenin cevabı diğer bir maddenin cevabını etkilememelidir.
+
+--
+
+- **Madde 1:** Yarıya bölme tekniği bir ölçme aracının hangi özelliği hakkında bilgi verir?
+
+--
+
+- **Madde 1:** Test-tekrar test, paralel testler, yarıya bölme, KR-20, KR-21 ve Cronbach alfa gibi tekniklerle hesaplanan korelasyon testin hangi niteliğini belirlemede kullanılır? 
+
+???
+Not: Bu iki maddenin cevaplanması birbirine bağlıdır. 2. maddenin 1. maddenin cevaplanmasını kolaylaştırmaktadır. 
+
+
+
+
+---
+## Kısa Yanıtlı Maddelerin Yazılmasında Dikkat Edilmesi Gereken Noktalar
+
+- Cevaplayıcı cevabı düşünerek bulup yazmak zorundadır. Bu nedenle bilgiyi hatırlama ve bulma yeteneğini ölçer.
+
+--
+
+- Cevaplar kısa olduğu için yazılı yoklamaya göre daha çok soru sorabilir. 
+
+--
+
+- Cevaplayıcı verdiği cevapta serbesttir.
+
+--
+
+- Düşük eğitim basamaklarında da rahatlıkla uygulanabilir.
+
+---
+## Kısa Yanıtlı Maddelerin Özellikleri
+
+- Puanlama yazılı yoklamadan daha kolay ve objektiftir. 
+
+--
+
+- Kısa cevaplı test maddeleri, çoktan seçmeli test maddelerine göre daha kolay yazılır.
+
+--
+
+- Şans başarısı yoktur. Bu özelliği ile yazılı ve sözlü yoklamaya benzemektedir.
+
+--
+
+- Soru sayısı fazla olduğu için kısa ve çok sayıda soru sorarak, öğrenme eksikliklerinin belirlenmesi ve izleme amacıyla kolaylıkla kullanılabilir.
+
+--
+
+- Puanlayıcı yanlılığı çok azdır (yazılı yoklamalara göre daha objektiftir).
+
+
+
+---
+## Kısa Yanıtlı Maddelerin Yazılmasında Dikkat Edilmesi Gereken Noktalar
+
+- Her soru tek bir davranışı ölçmelidir. Sorunun tek bir yanıtı olmalı, belirsiz ifadelerden kaçınılmalıdır.
+
+--
+
+- Birden fazla boşluk kullanmaktan kaçınılmalıdır.
+
+- Eksik cümle sorularında, hem bir soru içinde hem de tüm testteki sorularda bırakılan boşluk uzunlukları eşit olmalıdır.
+
+
+- Kısa yanıtlı maddelerin puanlanmasına kısmen de olsa öznellik karışabilir. Bu nedenle, kısa cevaplı testlerin puanlama güvenirliği tam değildir.
+
+- Kısa yanıtlı maddelerle bilgi düzeyindeki hatırlama veya ezber davranışları ölçülebilir ancak uygulama, analiz, sentez veya değerlendirme basamağındaki davranışları ölçmek için uygun değildir.
+
+---
+PISA kısa cevaplı
+
+---
+# Doğru-Yanlış Maddeleri
+
+- Yapılandırılması en basit, fakat en çok eleştirilebilecek test maddelerinden biridir.
+
+--
+
+- Doğru yanlış testleri öğrencilerin kendilerine sunulan doğru olan veya olmayan bilgilerin tanındığını gösteren bir yanıt (doğru veya yanlış) seçmelerini gerektirir.
+
+--
+
+- Yanıtlayıcılar için iki olasılık vardır.  Öğrenciler bu iki yanıttan birini seçmek zorundadır.
+
+
+- En yüksek şans başarısına sahip olan ölçme aracıdır.
+
+--
+- Puanlanması kolay ve objektiftir. 
+
+--
+
+- Doğru-yanlış testlerinde puanlama az zaman alır.
+
+--
+- Makine (optik okuyucu) ile puanlama yapmak mümkündür. 
+
+
+---
+# Doğru-Yanlış Maddeleri
+
+**Yönerge:**
+- Aşağıdaki cümlelerde verilen bilginin doğru olması durumunda, cümlenin başında verilen ( _ ) bölüme D, yanlış olması durumunda ise Y harfi koyunuz.
+
+- Önerme:
+( Y ) Geçerlik ölçme araçlarının tesadüfi hatalardan arınıklık derecesi olarak tanımlanır. 
+
+
+- Doğru-yanlış maddelerine verilen cevaplar bazen bir harf bazen de bir işaretle sınırlıdır. 
+
+- Bu tip maddelerde cevabı yazmak içi ayrılan süre çok kısa olduğundan, bir testte çok sayıda doğru-yanlış maddesi kullanılabilir. Böylece geniş bir içerik yoklanabilir.
+
+- Bu nedenle, doğru-yanlış testlerinde güvenirlik ve kapsam geçerliği artar.
+
+
+---
+## Doğru-Yanlış Maddelerinin Yazılmasında Dikkat Edilmesi Gerekenler
+
+- Her bir maddede sadece bir fikir belirtilmelidir. Aynı maddede biri doğru diğeri yanlış iki fikir yer alırsa öğrencileri yanıltabilir.
+
+- Örnek:  Foklar kutup denizlerinde yaşar ve diğer balıklar gibi yumurtlayarak ürerler.      (D / Y )
+
+- Sorularda kısmi doğruluk ya da kısmi yanlışlık bulunmamalıdır.
+
+- Örnek: İkinci Dünya Savaşı Avrupa ve Afrika’da cereyan etmiştir. (D / Y )
+
+
+
+- Doğru-yanlş maddelerinde doğruluğu ya da yanlışlığı kuşku götürmeyen bir cümlenin verilmesi yeterlidir. 
+- ( _ ) Doğru-yanlış tipindeki maddelerin hazırlanması kolay ve şans başarısı düşüktür. (D/Y)
+
+???
+Not: Bu maddede iki fikir bulunmaktadır, biri doğru-yanlış tipi maddelerin hazırlanmasının kolay olmasıdır ki bu ifade doğrudur, 
+diğeri ise doğru-yanlış tipi maddelerin şans başarısının düşük olmasıdır ki bu ifade yanlıştır. 
+
+
+---
+## Doğru-Yanlış Maddelerinin Yazılmasında Dikkat Edilmesi Gerekenler
+
+- Maddenin yanlışlığı önemsiz bir ayrıntıda, aldatıcı, dikkatten kaçan ya da algılanması zor olan bir noktada olmamalıdır.
+
+- Örnek: Fransız ihtilali 1798 yılında olmuştur. (D / Y)
+
+- Olumsuz ifadeler kullanmaktan kaçınmalıdır.
+
+- Örnek: doğru – yanlış testleri objektif olarak puanlanamaz. (D / Y)
+
+- Örnek: Atatürk siyasal bağımsızlığın ekonomik bağımsızlığa bağlı olduğunu görmemiş değildir. (D / Y)
+
+
+- ( _ ) KR-22 güvenirlik katsayısı bir testin maddeleri arasındaki korelasyona dayalıdır. (Y)
+
+
+???
+Not: Bu maddede yanlış ifade “KR-22”dedir. Bu ifade bireyin dikkatinden kaçabilir. 
+
+---
+## Doğru-Yanlış Maddelerinin Yazılmasında Dikkat Edilmesi Gerekenler
+
+- Doğru-yanlış tipi maddeler ya mutlak doğru ya da mutlak yanlış olmalıdır.
+
+- Mutlak doğru ya da mutlak yanlış ifadeler de çoğunlukla olgusal bilgilerin ölçülmesine olanak sağlar.
+
+- Bu nedenle, karmaşık beceriler yeterince ölçülememektedir. 
+
+- Önemsiz ayrıntıların ölçülmesi, ezbere dayalı zihinsel işlevlerin ölçülmesi testin geçerliğini düşürür
+
+
+---
+## Doğru-Yanlış Maddelerinin Yazılmasında Dikkat Edilmesi Gerekenler
+
+- Her madde olabildiğince kısa, açık ve yalın ifade edilmelidir.
+
+  - Örnek: Yazılı yoklamaların puanlanmasında kullanılan farklı puanlama türlerinden olan anahtarla puanlama yapılan puanlamaların daha doğru olabilmesini sağlayabilen bir puanlama yöntemidir. (D / Y)
+
+--
+     Yerine;
+- Anahtarla puanlama yöntemi yazılı yoklamaların puanlama hatalarını azaltır.  (D / Y)
+  Şeklinde ifade edilmelidir.
+
+
+
+
+---
+## Doğru-Yanlış Maddelerinin Yazılmasında Dikkat Edilmesi Gerekenler
+
+- Doğru yanlış ifadeleri ders kitabından olduğu gibi alınmamalıdır.
+
+- Doğru ifadeler yanlış ifadelerle yaklaşık aynı uzunlukta yazılmalıdır.
+
+- Maddenin doğruluğuna ya da yanlışlığına ipucu olabilecek kelimeler kullanmaktan kaçınılmalıdır.   
+
+- Örnek: Payları eşit iki kesirden paydası büyük olan diğerinden küçük olduğuna göre 2/7 kesri, 2/9 kesrinden büyüktür. (Y)
+
+
+
+---
+## Doğru-Yanlış Maddeleri
+
+- Doğru-yanlış maddelerinde kesin ifadeler kullanılmalı, “çoğu zaman”, “bazen”, “birkaç” gibi belirsiz ifadeler kullanılmamalıdır. Çünkü, bu ifadeler görecelidir ve bu nedenle kişiden kişiye farklı anlaşılabilir.
+
+--
+
+- Örnek: ( _ ) Doğru–yanlış maddelerinde birkaç seçenek bulunur. (D/Y)
+
+???
+Not: “birkaç” ifadesi maddeye belirsizlik katmaktadır. Bu kelime bir birey için 2 anlamına gelebilirken başka bir birey için 3 veya diğer bir birey için 5 veya daha çok anlamına gelebilir ve algılanan anlam cevabın doğru veya yanlış olmasını etkiler.“birkaç” kelimesinin “iki” kelimesi ile değiştirilmesi maddeye kesinlik kazandırır ve madde kesinlikle doğru olarak cevaplanabilir.
+
+
+---
+## Doğru-Yanlış Maddelerinin Yazılmasında Dikkat Edilmesi Gerekenler
+
+- Şans başarısı çok yüksektir. Önemsiz ayrıntı ve ezbere dayalı bilgileri yoklama eğilimi yüksektir. 
+
+- Yönerge: Aşağıdaki önermeler doğru ise parantez içine D, yanlış ise Y yazınız. Yanlış önermelerin doğrularını boşluklara belirtiniz. 
+  
+    (…) 1. Bir testin güvenilir olabilmesi için geçerli olması şarttır.
+    
+- Doğru-yanlış tipi maddeler ölçülmek istenen davranışa sahip olmayan yani cevabı bilmeyen bir birey tarafından tahmin edilmek suretiyle doğru cevaplanabilir. Bireyin cevabı ya doğru ya da yanlış olmak üzere iki kategorilidir. Dolayısıyla bireyin sadece tahminle doğru yanıtı bulma olasılığı %50´dir.bu da puanların güvenirliğini ve geçerliğini düşürmektedir. şans başarısı en yüksek olan testtir. 
+    
+---    
+## Doğru-Yanlış Maddeleri Yazımda Dikkat Edilmesi Gereken Noktalar
+
+- Doğru -yanlış maddelerinden oluşan bir test hazırlanırken, doğru ve yanlış önermeler test içerisine belli bir düzende yerleştirilmemelidir. Eğer cevaplayan ilk yapmış olduğu sorularda bu düzeni yakalarsa, diğer soruları okumadan doğru cevabı bulabilir.
+
+- Doğru önermeler ve yanlış önermeler test içerisine yaklaşık olarak eşit dağıtılmalıdır. 
+
+
+---
+## Eşleştirme Maddeleri
+
+- Eşleştirmeye dayanan maddeler, birbirine paralel iki sütunda verilen ifadelerin belirli bir kurala göre eşleştirilmesiyle oluşur. 
+
+- Eşleştirme maddeleri, özellikle kişiler, tarihler, terimler, semboller, yazarlar, ilkeler, nesneler gibi sınırlı olan ifadelerin ölçülmesinde kullanılır.
+
+---
+## Eşleştirme Maddeleri
+- Aşağıda A sütununda verilen cümleler B sütununda verilen şehirlerden birini tanımlamaktadır.  B sütunundaki yanıtlardan  uygun olanları seçin ve önündeki harfi A sütunundaki ilgili cümlenin önünde yazın
+
+
+- eşleştirmeli madde örneği
+
+---
+## Eşleştirme Maddeleri
+- Bu tip maddeler kullanmanın en önemli avantajı, kısa sürede çok sayıda davranışı test edebilmesidir.  
+
+- Verilen ifadeler kendi içerisinde tutarlı olmalıdır.
+
+- İfadelerin sayısının artması şans başarısını azaltacağından güvenirliği arttıracaktır.
+
+- Eşleştirme maddelerinde yönerge çok açık bir biçimde yazılmalıdır.
+
+---
+## Eşleştirme Maddeleri
+
+- Madde sayısı en az 6 en fazla 15 olmalıdır.
+
+- Öncüller grubu ve seçenekler grubu eşit sayıda olmamalı, birinin sayısı daha fazla olmalıdır.
+
+- Uzun ifadeler öncül, kısa ifadeler seçenek olarak kullanılmalıdır.
+
+- Seçeneklerin bulunduğu sütun kelime listesi ise alfabetik sıraya göre, tarih veya sayı listesi ise büyüklük sırasına göre düzenlenmelidir.
+
+- Öğrencilerin öncüllerden bir ok çıkararak cevaplamalarına izin verilmemelidir.
+

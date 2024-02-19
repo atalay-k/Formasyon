@@ -1,0 +1,1397 @@
+---
+title: "`r emo::ji('chart')` EGİTİMDE ÖLÇME VE DEĞERLENDİRME"
+subtitle: " <br> `r emo::ji('graph')` Ölçme Araçlarında Aranan Özellikler"
+author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
+date: "2022-2023 Guz <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides-style.css"]
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(emo)
+library(DiagrammeR)
+library(DiagrammeRsvg) 
+library(rsvg) 
+library(ggplot2)
+hataturleri <- grViz("digraph{
+                     graph[rankdir = TB]
+                     node[shape = rectangle, style = empty] 
+                     A[label = 'Hata Türleri']
+                     B[label = 'Sabit']
+                     C[label = 'Sistematik']
+                     D[label = 'Tesadüfi']
+                     edge[color = red]
+                     A -> B [color = black]
+                     A -> C [color = black]
+                     A -> D [color = black]
+                     }")
+
+hatakaynaklari <- grViz("digraph{
+                     graph[rankdir = TB]
+                     node[shape = rectangle, style = empty] 
+                     A[label = 'Hata Kaynakları']
+                     B[label = 'Ölçmeciden']
+                     C[label = 'Ölçülen Bireyden']
+                     D[label = 'Ortamdan']
+                     E[label = 'Araçtan']
+
+                     edge[color = red]
+                     A -> B [color = black]
+                     A -> C [color = black]
+                     A -> D [color = black]
+                     A -> E [color = black]
+
+                     }")
+
+
+guvenirlik <- grViz("digraph{
+                     graph[rankdir = TB]
+                     node[shape = rectangle, style = empty] 
+                     A[label = 'Güvenirlik Belirleme Yöntemleri']
+                     B[label = 'Korelasyona Dayalı Yöntemler']
+                     C[label = 'Madde Kovaryansına Dayalı Yöntemler']
+                     L[label = 'Değerlendirmeciler Arası Tutarlılık']
+                     D[label = 'Test Tekrar Test']
+                     E[label = 'Parelel Formlar']
+                     F[label = 'İki Yarıya Bölme']
+                     
+                     G[label = 'Cronbach Alfa']
+                     H[label = 'KR-20']
+                     I[label = 'KR-21']
+                     
+                     M[label = 'Yüzde Uyumu']
+                     N[label = 'Sınıf içi Korelasyon']
+                     O[label = 'Kappa Yöntemi'] 
+
+                     
+                     edge[color = red]
+                     A -> B [color = black]
+                     A -> C [color = black]
+                     B -> D [color = black]
+                     B -> E [color = black]
+                     B -> F [color = black]
+
+                     C -> G [color = black]
+                     C -> H [color = black]
+                     C -> I [color = black]
+                     
+                     L -> M [color = black]
+                     L -> N [color = black]
+                     L -> O [color = black]
+                     }")
+```
+
+
+#  Güvenirlik .huge[`r emo::ji("stats")`]
+
+.hand[İçerik...]
+
+
+-   Ölçme Aracının Sahip Olması Gereken Özellikler
+
+--
+
+-   Korelasyon
+
+--
+
+-   Güvenirlik
+
+--
+
+-   Güvenirlik Hesaplama Yöntemleri
+
+---
+
+## Ölçme Araçlarında Aranan Özellikler
+
+-   Güvenirlik
+
+--
+
+-   Geçerlik
+
+--
+
+-   Kullanışlık
+
+--
+
+- **Güvenirlik ve geçerlik** kavramlarının temel mantığı ölçme sonuçları ve bu sonuçlar kullanılarak yapılan değerlendirmelerin **ne kadar az hatalı** olduğunun belirlenmesi üzerinde kurulmuştur (Nunnally ve Bernstein, 1994; akt: Başokçu, 2019).
+
+---
+
+# Ölçmede Hata
+
+
+
+.four-column[
+**Ölçümler**
+
+1
+
+2
+
+3
+
+4
+]
+.four-column[
+**Hassasiyet**
+
+0-kg
+
+0.0   -  100 gr
+ 
+0.00  -  10gr
+
+0.000 -  1gr
+]
+.four-column[
+**Bilge'nin Ölçümleri**
+
+59
+
+59.3
+
+59.320
+
+59.323
+
+]
+.four-column[
+**Ece'nin Ölçümleri**
+
+59 
+
+59.1
+
+59.140
+
+59.145
+
+]
+
+
+---
+## Ölçmede Hata
+
+--
+
+```{r echo=FALSE, fig.align='center',out.width="100%"}
+hatakaynaklari
+```
+
+
+---
+## Ölçmede Hata
+
+**Ölçmenin yapıldığı bireyden kaynaklanan hatalar**
+
+--
+
+-   Sınav olan kişinin kaygı düzeyini
+
+--
+
+-   Sınav olan kişinin sınav anındaki durumu
+
+--
+
+-   Öğrencinin sınav sırasındaki rahatsızlanması,
+
+--
+
+-   Kopya çekmesi, şans başarı vb. etkenler
+
+
+---
+## Ölçmede Hata
+
+**Ölçmenin aracından kaynaklanan hatalar**
+
+--
+
+-   Ölçme aracını oluşturan maddelerin kapsamı yeterince temsil **etmemesi**
+
+--
+
+-   Ölçme aracındaki maddelerin ve test yönergesinin iyi ifade **edilememesi**
+
+--
+
+-   Çoktan seçmeli sorulardan oluşan ölçme araçlarında doğru yanıtın tahmin yoluyla bulunması
+--
+
+-   Ölçme aracının uzunluğu, ölçme aracındaki madde sayısı
+
+---
+## Ölçmede Hata
+
+**Ölçmeyi yapan bireyden kaynaklanan hatalar**
+
+--
+
+-   Ölçme işlemini yapan kişinin sınav anındaki tutumu
+
+--
+
+-   Ölçmeyi yapan kişinin, puanlama yaparken yorgun olması, dikkatsizliği
+
+--
+
+-   Ölçmeyi yapan kişinin ölçme yaparken öznel puan verme eğilimi
+
+--
+
+-   Puanlayıcının, cevapları kendi bakış açısına ve anlayışına göre değerlendirmesi
+
+--
+
+-   Puanlamanın bilgisayar ile yapıldığı durumlarda cevap anahtarındaki cevaplardan bazılarının silik olması nedeniyle optik okuyucu tarafından okunmaması
+
+--
+
+-   Puanlamanın nesnel olmadığı, öznel kanılara dayandığı durumlarda, puanlar bir puanlayıcıdan diğerine veya puanlama zamanına göre değişecektir.
+
+---
+## Ölçmede Hata
+
+**Ölçmenin yapıldığı ortamından kaynaklanan hatalar**
+
+--
+
+-   Testin yapıldığı ortamın sıcaklığı
+
+--
+
+-   Işık düzeyi
+
+--
+
+-   Gürültü düzeyi
+
+--
+
+-   Havalandırma durumu
+
+--
+
+-   Sınav düzenin kopya çekmeye uygunluğu
+
+---
+
+.pull-left[
+
+# Güvenirlik
+
+- **Kararlılık:** Aynı kişiler üzerinde farklı zamanlarda elde edilen test puanları arasındaki tutarlılıktır. 
+- **Tutarlılık:** Bir testten elde edilen madde puanları ile test puanları arasındaki tutarlılıktır.
+
+- **Duyarlılık:** Ölçme birimi küçüldükçe daha doğru ölçmeler elde edilmesidir.                               
+
+]
+--
+
+.pull-right[
+
+<br>
+<br>
+```{r echo=FALSE, fig.align='center',out.width="60%"}
+knitr::include_graphics("img/Guvenilikanlam.PNG",error = FALSE)
+```
+
+]
+
+
+
+---
+## Ölçmede Hata
+
+.pull-left[
+
+<br>
+<br>
+
+$X = T \pm E$
+
+- $X:$ Gözlenen puan
+
+- $T:$ Gerçek puan
+
+- $E:$ Hata puan
+]
+
+.pull-right[
+```{r echo=FALSE, fig.align='center',out.width="100%"}
+hataturleri
+```
+]
+---
+## Ölçmede Hata
+
+- Bir kişinin gerçek ağırlığı 59kg olsun.
+
+--
+
+- Ölçme sonucumuz 58.5kg is  ise -0.5 kg hata yaptık demektir.
+
+--
+
+- Ölçme sonucumuz 59.5kg is  ise +0.5 kg hata yaptık demektir.
+
+--
+
+- O halde hatanın bir **yönü** ve bir **miktarı** vardır diyebiliriz.
+
+--
+
+- hatanın  **yönü** pozitif(+) veya negatif(-) olabilir.
+
+
+
+---
+
+## Ölçmede Hata
+
+-   **Sabit ve sistematik hata**larda ölçme sonuçlarına karışan **hatanın miktarı, yönü ve kaynağı bellidir.** Bu sebeple bu tür hataların ölçme sonuçlarına karışmasını **engellemek ya da düzeltmek nispeten daha kolaydır.**
+
+--
+
+-   **Tesadüfi hataların yönü ve kaynağı belli değildir.** Ölçme sonuçlarına bazen pozitif, bazen de negatif önde karışabilirler. Bu nedenle **tesadüfi hatalar kontrol edilemez.**
+
+---
+## Ölçmede Hata
+
+-   Sınav sonuçlarını düşük bulan bir öğretmenin tüm öğrencilerin puanına 5 puan ilave etmesi
+--
+
+-   Bir yabancı dil sınavında okuyucunun yanlış söylemesi nedeniyle öğrencilerin bir kelimeyi yanlış yazmaları ve bu kelimenin metnin içinde birden fazla geçmesi
+--
+
+-   Bir öğretmenin yaptığı bir yazılı yoklama sınavında az süre vermesi nedeniyle öğrencilerin tamamının son soruyu yanıtlayamaması
+--
+
+-   Test sırasında bir öğrencinin yanlışlıkla yanındaki öğrencinin cevabını görmesi
+--
+
+-   Bir öğretmenin istemeden fark etmeden dikkatsizlik sonucu öğrencinin puanlarını yanlış toplaması
+
+---
+## Ölçmede Hata
+
+-   Ucu 2cm kırık olan 2m uzunluğundaki bir cetvel ile sınıftakilerin boyunun ölçülmesi (her seferinde 1 kez kullanılacak)
+--
+
+-   Öğretmenin sınavda birkaç öğrencinin arka sayfadaki cevaplarını görmemesi
+--
+
+-   Bir öğretmenin öğrencilerinin matematik sınavında yazı güzelliklerine göre not vermesi.
+--
+
+-   Öğrencinin çok iyi bildiği bir konudan hastalanması sonucu gereken puanı alamaması
+--
+
+-   Bir öğretmenin yazısı güzel öğrencilere yazısı güzel olmayan öğrencilere nazaran daha yüksek puan vermesi
+
+---
+## **Ölçmede Hata**
+
+-   Testin çok kısa ya da çok uzun olması, maddelerin iyi ifade edilememesi.
+--
+
+-   Testin yapıldığı sınıfın sıcaklığı, ışık, havalandırma ve gürültü düzeyi.
+--
+
+-   Ölçmenin yapıldığı grubun ölçülen özellik açısından homojen ya da heterojen bir yapıya sahip olması.
+--
+
+-   Ölçme aracıyla doğru ölçüp yanlış kaydetme
+--
+
+-   Çok sayıda cevap kağıdını okuyan bir kişinin dikkati azaldıkça, aynı cevaba farklı puanlar vermesi
+
+
+---
+# Korelasyon
+
+-   Korelasyon, iki değişken arasındaki ilişkinin derecesini verir.
+--
+
+-   İki değişken arasındaki ilişkiyi veren kat sayıya **korelasyon katsayısı** adı verilir.
+--
+
+-   Korelasyon katsayısı $r_{xy}$ , ilişkinin miktarını sayısal olarak ifade eden istatistiksel değerdir.
+--
+
+-   Bu kat sayı iki değişkenin birlikte değişip değişmediğini ve bu değişimin yönünü ve derecesini gösterir.
+--
+
+-   Korelasyon kat sayısı $+1.00$ ile $-1.00$ arasında bir değer **alır.**![](Resim24.PNG){width="144"}
+
+---
+## Korelasyon
+
+**Korelasyon katsayısı;**
+
+-   $+1.00$ 'e yaklaştıkça aynı yöndeki **ilişki artar.**
+
+--
+
+-   $-1.00$ 'e yaklaştıkça ters yönde **ilişki artar.**
+
+--
+
+-   $0.00$ ise arada **ilişki yoktur.**
+
+--
+
+- Korelasyon katsayısının başındaki işaret $(-, +)$ bize sadece **ilişkinin yönünü** belirtir.
+
+--
+
+- Güçlü bir ilişkiyi bu katsayının $\pm1$ yakın olmasından anlarız. 0,00'a yaklaşması ilişkinin zayıf olduğuna işarettir.
+
+---
+## Korelasyon
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+kor0 <- ggplot(mtcars, aes(x=drat, y=qsec)) +
+  geom_point() +
+  labs( x="Kahvaltıda tüketilen ekmek miktarı", y = "Test Puanı")+
+  theme_bw()
+kor0
+```
+]
+
+--
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+kor0 + geom_smooth(method=lm, se=FALSE)
+```
+]
+
+--
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+kor0+ geom_smooth(method=lm, se=FALSE) +
+  stat_ellipse()
+kor0deger <- round(cor(mtcars$drat, mtcars$qsec), 3)
+```
+]
+
+--
+
+.alert[Kahvaltıda tüketilen ekmek miktarı ve test puanı arasındaki korelasyon `r kor0deger`]
+
+
+---
+## Korelasyon
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+mtcars$new  <- mtcars$gear*60 + sample(-15:15,32,replace = TRUE)
+kororta <- ggplot(mtcars, aes(x=new, y=mpg)) +
+  geom_point() +
+  labs( x="Sosyal Faliyetlere Ayrılan Zaman (dk)", y = "Test Puanı")+
+  theme_bw()
+kororta
+```
+]
+
+--
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+kororta + geom_smooth(method=lm, se=FALSE)
+```
+]
+
+--
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+kororta+ geom_smooth(method=lm, se=FALSE) +
+  stat_ellipse()
+korortadeger <- round(cor(mtcars$mpg, mtcars$new ), 3)
+```
+]
+
+.alert[Sosyal faliyetlere ayrılan zaman ve test puanı arasındaki korelasyon `r korortadeger`]
+
+
+
+
+
+
+
+
+---
+## **Korelasyon**
+
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+set.seed(42)
+mtcars$dispnew  <- mtcars$disp /2 + 60 + sample(-5:5, 32, replace = TRUE)
+koryuksek <- ggplot(mtcars, aes(x=dispnew, y=disp)) +
+  geom_point() +
+  labs( x="Ders Dışı Öğrenmeye Ayrılan Zaman (dk)", y = "Test Puanı")+
+  theme_bw()
+koryuksek
+```
+]
+
+--
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+koryuksek + geom_smooth(method=lm, se=FALSE)
+```
+]
+
+--
+
+.three-column[
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+koryuksek+ geom_smooth(method=lm, se=FALSE) +
+  stat_ellipse()
+koryuksekdeger <- round(cor(mtcars$disp, mtcars$dispnew ), 3)
+```
+]
+
+.alert[Ders dışı öğrenmeye ayrılan zaman ve test puanı arasındaki korelasyon `r koryuksekdeger`]
+
+
+---
+## Güvenirlik
+
+-   Güvenirlik; ölçme sonuçlarının (test puanlarının) **tesadüfi hatalardan arınık olma derecesidir** (APA, 1974).
+
+--
+
+-   Ölçme sonuçlarının tesadüfi hatalardan arınıklığının bir ölçüsüdür (Turgut, 1990; akt: Büyüköztürk vd., 2020).
+
+-   Örneklem güvenirliği
+
+--
+
+-   Ölçme aracının güvenirliği
+
+--
+
+-   Puanlama güvenirliği
+
+--
+
+-   Puanlayıcı güvenirliği
+
+--
+
+-   Uygulama güvenirliği
+    
+---
+
+## Güvenirlik
+
+- Ölçme sonuçlarının **tesadüfi hatalardan arınıklığının** bir ölçüsüdür (Turgut, 1990; akt: Büyüköztürk vd., 2020).
+
+--
+
+  - Duyarlılık
+
+--
+
+  - Tutarlılık
+
+--
+  - Kararlılık
+
+---
+##   Korelasyon
+
+```{r echo=FALSE, fig.align='center',out.width="75%"}
+knitr::include_graphics("img/Korelasyon.PNG",error = FALSE)
+```
+
+---
+##   Korelasyon
+.pull-left[
+```{r echo=FALSE, fig.align='center',out.width="100%"}
+knitr::include_graphics("img/Korelasyon1.PNG",error = FALSE)
+```
+]
+
+.pull-right[
+`r emo::ji('link')` [Korelasyon hesaplamaları_excel](https://docs.google.com/spreadsheets/d/1Ha0v62qYpwXhSo-7bx_-hvh_KRmYYic3/edit?usp=sharing&ouid=117160923198825369445&rtpof=true&sd=true)<br>
+
+`r emo::ji('link')` [Korelasyon hesaplamaları_1](https://langtest.jp/shiny/cor/)<br>
+
+`r emo::ji('link')` [Korelasyon hesaplamaları_2](https://shiny.rit.albany.edu/stat/rectangles/#:~:text=Correlation%20and%20Covariance%20Visualiation%20App%20with%20Shiny&text=We%20use%20the%20Correlation%20coefficient,hours%20of%20sleep%20and%20irritability.)<br>
+]
+
+
+
+---
+##   Güvenirlik
+
+
+```{r echo=FALSE, fig.align='center',out.width="100%"}
+guvenirlik
+```
+
+
+???
+- Testin bir uygulamasından elde edilen -sonuçların diğer bir uygulamasından elde edilen sonuçlarla tutarlılığı (test-tekrar test güvenirliği) 
+<br>
+- İki eşdeğer test formundan elde edilen sonuçların tutarlılığı (alternatif-test güvenirliği)
+<br>
+- Testteki bir maddenin diğer maddelerle tutarlılığı (iç-tutarlılık güvenirliği)
+<br>
+- Bu üç güvenirlik yaklaşımı güvenirlik kestiriminin üç farklı yöntemi olarak ele alınır. 
+
+
+---
+
+##Güvenirlik İndeksi
+
+- Bir test uygulandığı zaman asıl ilgilenilen gerçek puanlar olmasına rağmen sadece gözlenen puanlar bilinir. 
+
+--
+
+- Öyleyse önemli bir soru bireylerin gerçek puanları ve gözlenen puanları ne kadar yakından ilgilidir. 
+
+--
+
+- Bir testteki gerçek puanlar ile gözlenen puanlar arasındaki ilişkinin derecesini ifade eden **korelasyon katsayısı güvenirlik indeksi** olarak bilinir. 
+
+---
+
+##Güvenirlik İndeksi
+
+- Bir test uygulandığı zaman, test sonuçlarını yorumlayacak ve kullanacak birey, **aynı bireyler benzer koşullar altında tekrar teste alındıkları zaman benzer sonuçların** elde edilebileceğinin güvencesini ister. 
+
+--
+
+- Test puanlarının istenen **tutarlılığı (veya tekrar üretilebilirliği) güvenirlik** olarak adlandırılır. 
+
+--
+
+  - Bütün psikolojik ölçümler belli bir dereceye kadar **güvenilmezdir.** 
+
+--
+
+- Örneğin, bir grup yetişkine bir yetenek testi uygulandığı ve aynı bireyler iki hafta sonra tekrar test edildiği zaman, **her bir bireyin iki uygulamada da aynı puanı elde etmesi veya grup içinde aynı sırada yer alması olasılık dahilinde değildir.** 
+
+---
+
+##Güvenirlik İndeksi
+
+
+- Güvenirlik bir testin **evrensel bir özelliği değildir.** Belli bir **örneklem için bir testin özelliğidir. **
+
+
+--
+
+- Bir test **belli bir örneklem için çok güvenilir olabilir** ancak diğer örneklemler için o kadar güvenilir olmayabilir.
+
+
+--
+
+- Bir testteki gerçek puanlar ile gözlenen puanlar arasındaki ilişkinin derecesini ifade eden korelasyon katsayısı **güvenirlik indeksi** olarak bilinir. 
+
+--
+
+- Formülünde yer alan gerçek puanların standart sapması gerçek puanlar, doğrudan gözlenemeyeceğinden dolayı hesaplanamaz.
+
+--
+
+- Bu nedenle **güvenirlik indeksinin uygulama değeri çok düşüktür.** 
+
+
+---
+##Standart Sapma
+
+`r emo::ji('link')` [Standart Sapma](https://alhughes.shinyapps.io/Week4/)<br>
+
+
+
+---
+## Test-Tekrar Test Yöntemi
+
+- Test-tekrar test güvenirliği bir testin **iki farklı uygulamasından** aynı bireylerin aldığı puan çiftleri arasındaki **korelasyon** ile elde edilen bir güvenirlik kestirimidir.
+
+--
+
+- İki uygulamadan elde edilen **puanlar arasındaki korelasyon**,
+
+--
+  - 1’e yaklaşırsa puanlar birbirine yaklaşır, 
+  
+  - Yüksek korelasyon **zamana bağlı olarak değişim olmadığını gösterir.**
+
+--
+
+- Test-tekrar test güvenirliği, kişilik özelliği gibi **zamana karşı kararlılık** gösteren bir değişkeni ölçmeyi amaçlayan bir testin güvenirliğinin değerlendirilmesinde uygun bir ölçümdür.
+
+
+
+
+
+
+---
+## Test-Tekrar Test Yöntemi
+
+- Test-tekrar test çalışması düzenlerken ele alınması gereken önemli bir soru **uygulamalar arasında ne kadar zaman olması gerektiğidir.** 
+
+--
+
+- Bu sorunun tek bir yanıtı yoktur. Zaman aralığı **ezber veya uygulama etkilerinin azalmasına yetecek kadar uzun** ama bireylerin **gerçek puanlarında olgunlaşmaya dayanacak değişimlere izin vermeyecek kadar da kısa olmalıdır.** 
+
+--
+
+- Bekleme süresini belirlerken **test puanlarının hangi amaçla kullanılacağı** da hesaba katılmalıdır. 
+
+--
+
+- Uygulamalar arasında geçen zaman ne kadar olursa olsun, **seçilen süreye göre farklı test-tekrar test katsayılarının** elde edilebileceğini bilmek önemlidir. 
+
+---
+## Test-Tekrar Test Yöntemi
+
+- Uygulamalar arasındaki **zaman arttıkça** test-tekrar test yöntemiyle elde edilen **kararlılık katsayısı da azalacaktır.** 
+
+--
+
+- **Ölçülen özellikte zaman içinde değişmenin az olacağı** düşünülüyorsa bu yöntem ile güvenirlik hesaplanabilir.
+
+--
+
+
+- Test puanlarındaki kararlılık derecesinin kanıtı **bireyleri uzun-dönemli programlara yerleştirmek için kullanılan testlerde gerekli olabilir.** 
+
+--
+
+- En yüksek test-tekrar test katsayıları **bireysel olarak uygulanan yetenek testlerinde** rastlanmıştır.
+Örneğin, Weschler Yetişkin Zeka Testinin alt ölçekleri için rapor edilen katsayılar 0.70’ler, 0.80’ler ve hatta 0.90’lardadır. Kişilik, ilgi veya tutum ölçüleri için test-tekrar test güvenirliği çoğunlukla yetenek testlerininkinden daha düşüktür ancak iyi yapılandırılmış ölçme araçlarında test-tekrar test katsayıları 0.80’lerde olabilir. 
+
+---
+## Test-Tekrar Test Yöntemi
+
+- Uygulamalar arasındaki **zaman arttıkça** test tekrar test yöntemiyle elde edilen **kararlılık katsayısı da azalacaktır.** Ölçülen değişkende zaman içinde değişmenin az olacağı düşünülüyorsa bu yöntem ile güvenirlik hesaplanabilir.
+
+
+| İki uygulama arasında geçen zaman  | Korelasyon Katsayısı  |
+|---|---|
+| 1 hafta  |  0.95 |
+| 1 ay  |  0.90 |
+| 5 ay  |  0.50 |
+
+---
+## Eşdeğer (Paralel, Alternatif) Formlar Yöntemi
+
+- Paralel form yöntemi bir testin **iki benzer formunun** geliştirilip iki formun da aynı grup bireylere uygulanmasını gerektirir.
+
+--
+
+- Testi alacak gruptaki bireylerin yarısına birinci form arkasından da ikinci form uygulanırken, diğer yarısına ikinci form arkasından da birinci form uygulanarak formların uygulanması sırasında denge sağlanabilir. 
+
+--
+
+- Daha sonra **iki uygulama sonucunda elde edilen puanlar arasındaki korelasyon katsayısı hesaplanır.**
+
+--
+
+---
+## Eşdeğer (Paralel, Alternatif) Formlar Yöntemi
+
+- Eğitim, sağlık gibi alanlarda uygulanan bazı başarı ve yetenek testleri bireylerin testi tekrar almasına olanak sağlamak ancak tekrar uygulamalarında **aynı maddeleri kullanmamak amacıyla birden fazla forma sahip olabilirler.** 
+
+--
+
+- Bir testin aynı içeriği kapsayan iki formunun uygulaması durumunda ölçümlere karışacak başlıca hatalar **test formlarının içeriğinden** kaynaklanır. 
+
+- Bunun yanında, **uygulama ve puanlama hataları**, **bireylerin performanslarındaki geçici dalgalanmalar** da puanlarda tutarsızlığa yol açabilir. 
+
+--
+
+- Birden fazla formu bulunan herhangi bir testin **formlarının denk olduğunun kanıtını sunulmalıdır.**
+
+
+---
+## Eşdeğer (Paralel, Alternatif) Formlar Yöntemi
+
+- Alternatif formlar güvenirlik kestirimleri için kabul edilen katı bir minimum değer olmasa da, çoğu standartlaştırılmış başarı testlerinin kılavuzları bu tip güvenirlik için 0.80’ler ve 0.90’lar arasında değişen katsayıları rapor ederler.
+
+--
+
+- Bulunan katsayı eşdeğerlilik katsayısı olarak bilinir. Bu **katsayının yüksek oluşu** her **iki testin güvenirliğinin yüksek** olduğunu gösterir.
+
+---
+## Eşdeğer (Paralel, Alternatif) Formlar Yöntemi
+
+- **Test-tekrar testte araya zaman girmesi** (az ya da çok) ile ortaya çıkan zafiyeti gidermek için alternatif bir güvenirlik kestirme yöntemidir. 
+
+- Bu yöntem test tekrar test yönteminin dezavantajları olan **soruları hatırlama ya da öğrencilerin olgunlaşması** yeni bilgiler edinmesi gibi faktörleri ortadan kaldırır. 
+
+- Pratikte iki testin **eşdeğerliğinin sağlanması zordur.** Bu zorluktan dolayı, bu yöntemle güvenirliğin hesaplanması yoluna **çok fazla başvurulmamaktadır.**
+
+---
+## Eşdeğer (Paralel, Alternatif) Formlar Yöntemi
+
+- Bir öğretmen matematik sınavı için 2 tane 10 soruluk test (A ve B) hazırlamıştır. Bu 2 testteki soruları hazırlarken içerik, kapsam, madde tipi vb. açısından eşit (ya da çok benzer) olmasına dikkat etmiştir. İlk olarak sınıftaki öğrencilerin yarısına A testini yarısına da B testini vermiştir.
+
+- Öğrenciler ilk testi tamamladıktan sonra daha önce A testini alanlara B testini ve daha önce B testini alanlara da A testini dağıtarak her bir öğrencinin 2 testi de cevaplamasını sağlamıştır. Sınav bittikten sonra öğrencilerin 2 **testten aldıkları puanların korelasyonunu hesaplayarak tutarlılık anlamındaki** güvenirlik katsayısını hesaplamıştır. 
+
+---
+## Eşdeğer (Paralel, Alternatif) Formlar Yöntemi
+
+
+- Aynı özelliği ölçmeyi amaçlayan iki test,
+
+  - İki test uygulaması kısa aralıklarla yapılmalı,
+
+  - Eşdeğerlik katsayısı,
+
+  - Grup ikiye ayrılarak uygulama yapılabilir,
+
+ 
+
+---
+## İç tutarlılık Yöntemleri
+
+- Birçok test uygulamasında **testin tek bir formu bir grup bireye sadece bir kere uygulanır.** Bunun en yaygın örneği **öğretmenler tarafından hazırlanan ve sınıfta uygulanan testlerdir.**
+
+--
+
+- Birçok test uygulamasında asıl mesele bireylerin eldeki maddeleri nasıl yanıtladıkları değil, genellikle **eldeki maddelerden daha geniş kapsamdaki olası maddelere nasıl genelleme yapılacağıdır.**
+
+--
+
+- Bireylerin testteki performanslarının olası maddelere ne kadar tutarlı genellenebileceğini kestirmenin bir yolu bireylerin uygulanan tek bir formdaki maddelerdeki performanslarının **ne kadar tutarlı olduğunu** belirlemek olabilir. Bu koşullardaki güvenirliği kestirmek için tasarlanan yöntemlere **iç tutarlık yöntemleri** denir. 
+
+
+---
+## İç tutarlılık Yöntemleri
+
+-  Bireyler bir testteki maddelerde **tutarlı performans gösterirlerse, testin homojen maddelere sahip olduğu söylenebilir. **
+
+--
+
+- Bir grup maddenin homojen olabilmesi için **aynı tip performansı ölçmesi veya aynı kapsamı temsil etmesi gerekir.**
+
+--
+
+- Ayrıca **maddelerin iyi yazılmış olması** ve **teknik hatalardan arınmış olması** gerekir ki bireylerin yanıtları **içerik dışındaki ilgisiz faktörlerden etkilenmesin.** 
+
+---
+## İç tutarlılık Yöntemleri
+
+
+- Tek bir test uygulamasındaki maddeler **farklı alanlardan **(örneğin, matematik, tarih ve edebiyat) geldiklerinde, bireyler bu maddelerde olasılıkla t**utarlı performanslar sergileyemeyeceklerdir** ve **iç tutarlılık katsayısı düşecektir.** 
+
+--
+
+- Maddeler tek bir alandan (örneğin, tarih) gelirse, bazı maddeler temel kavramları test ederken, diğerleri **metnin dip notundaki daha önemsiz ayrıntıları test edebilir** ve bu durumda da **iç tutarlık katsayısı düşecektir. **
+
+
+
+
+---
+##Tek Bir Uygulama Gerektiren Yöntemler
+
+- Bütün maddeler içeriği iyi bir şekilde temsil etseler de, 
+
+- **iyi yazılmayan maddeler bireylerin soruyu yanlış yorumlamasına yol açabilir**
+
+- veya bazı yanıtlar **test alma deneyimine bağlı olabilir** ki bu durumlarda da iç tutarlık katsayısı düşecektir.
+
+- Sonuç olarak, **iç tutarlık katsayısı hem madde içeriği homojenliği hem de madde kalitesi endeksi olduğundan**, bir testin iç tutarlığını incelemek her zaman için uygundur. 
+
+
+---
+## Tek bir uygulama gerektiren yöntemler
+
+- Eş yarılar yöntemi
+
+--
+
+- Madde kovaryanslarına dayalı yöntemler
+
+--
+
+  - Alfa katsayısı
+
+  - Kuder-Richardson Formülleri
+
+      - KR20 formülü
+      - KR21 formülü
+
+
+---
+## Eş Yarılar Yöntemi
+
+- Eş yarılar yönteminde **testin bir formu** bir grup bireye uygulanır. 
+
+
+--
+
+
+- Ancak testi puanlamadan önce testteki maddeler, test uzunluğu eşit olacak şekilde **iki alt teste ayrılır.** 
+
+--
+
+- Böylece, eğer 20-maddelik bir test uygulandıysa, bu test her biri 10-maddelik iki yarı-teste bölünecektir. 
+
+--
+
+- İki yarı test **mümkün olduğunca birbirine paralel olmalıdır.** 
+
+
+
+---
+## Eş Yarılar Yöntemi
+
+- Bir testi yarılara bölmek için kullanılan  yöntemler
+
+--
+
+  - Tüm tek sayılı maddeler form 1, tüm çift sayılı maddeler ise form 2’ye yerleştirilir. 
+
+--
+  - Maddeler güçlüklerine (p-değerleri) göre sıralanır, daha sonra tek sayılı maddeler form 1, çift sayılı maddeler ise form 2’ye yerleştirilir. 
+
+--
+  - Maddeler iki forma rastgele yerleştirilir.
+
+--
+  - Maddeler formlara formların kapsamları birbiriyle uyuşacak şekilde yerleştirilir. 
+
+
+---
+## Eş Yarılar Yöntemi
+
+- Her birey için iki yarı-testten alınan puanlar hesaplanır. 
+
+--
+
+- Bireyin iki yarı-testten aldığı puanlar arasındaki **korelasyon katsayısı** hesaplanır.
+
+--
+
+- Kavramsal olarak elde edilen korelasyon katsayısı testin iki yarısı için **eşdeğerlik katsayısıdır. **
+
+
+---
+## Eş Yarılar Yöntemi
+
+- **Eşdeğerlik katsayısı** tüm testin güvenirlik katsayısından **daha düşük bir değerdir.** 
+
+--
+
+- Bu problemin çözümü için Spearman Brown tahmin formülü kullanılarak tüm testin **düzeltilmiş güvenirlik katsayısı elde edilebilir.** 
+
+$$r_{XX'} = \frac{2*r_{12}}{1+r_{12}}$$
+
+Burada 
+
+-	$r_{12}$: Yarı testler arasındaki korelasyon katsayısı
+
+-	$r_{XX'}$: Tüm testin güvenirlik kestirimi
+
+
+---
+## İç tutarlılık Yöntemleri
+
+- Testin alternatif formu geliştirilmeden ve aynı bireylere testi iki kez uygulamadan da bir testin güvenirliği kestirilebilir. 
+
+--
+
+- Bu tür bir kestirimin elde edilmesi, **test maddelerinin iç tutarlılığının değerlendirilmesini** gerektirir. 
+
+--
+
+- Bu doğrultuda, bu tür bir tahmin; iç tutarlılık güvenirlik kestirimi veya **maddeler arası tutarlılık** kestirimi olarak adlandırılır.
+
+--
+
+- Maddeler arası tutarlılık, **bir ölçekteki tüm maddeler arasındaki korelasyonun derecesini** ifade eder. Bir maddeler arası tutarlılık ölçümü, bir testin **tek bir uygulamasından elde edilir.** 
+
+--
+
+- O halde, **maddeler arası tutarlılık indeksi** bir testin homojenliğini değerlemede kullanılır.
+
+---
+## İç tutarlılık Yöntemleri
+
+- İç tutarlılık güvenirliğini hesaplamak için kullanılan formüller KR-20, KR-21, Cronbach Alfa. 
+
+--
+- Bu formüllerle elde edilen katsayı yüksekse test maddeleri birbirleriyle tutarlıdır. Yani test içinde ilgisiz, hatalı soru bulunmamaktadır.
+
+--
+
+- Kullanım koşulları; 
+
+--
+
+  - testin ölçtüğü özellik açısından homojen olması, yani aynı özelliği ölçüyor olması,  
+
+
+--
+
+  - testteki soruların doğruysa 1, yanlışsa ya da boş ise 0 şeklinde puanlanması gerekir.
+
+---
+## Kuder Richardson 20 (KR-20) 
+
+- Kuder Richardson 20 (KR-20) formülü sadece **iki kategorili puanlanan** maddeler için kullanılabilir. 
+KR-20 aşağıdaki formülle hesaplanır: 
+
+- KR-20; 0 – 1 puanlamanın yapıldığı ölçme araçları için hesaplanır.
+
+
+$$KR-20=\frac{K}{K-1}\frac{\sum_{i=1}^{K}p_i(1-p_i)}{S^2_x}$$
+
+Burada  
+- $K$:         Testteki madde sayısı  
+-	$p_i$:       i maddesinin güçlüğü  
+-	$pi(1-pi)$:  i maddesinin varyansı  
+-	$S^2_x$:     toplam test puanının varyansı  
+
+---
+## Kuder Richardson 21 (KR-21) 
+
+- Bütün maddelerin **eşit güçlükte** olduğu varsayılarak, Kuder ve Richardson tarafından daha basit bir formül türetilmiştir. 
+
+- KR-21 olarak adlandırılan bu formülde KR-20 formülünde olduğu gibi her bir madde varyansını hesaplamaya gerek yoktur. KR-21 aşağıdaki formülle hesaplanır: 
+
+$$KR-21=\frac{K}{K-1}\frac{K\overline{X}-\overline{X}^2}{KS^2_x}$$
+Burada
+- **K**: Testteki madde sayısı   
+- $\overline{X}$: toplam test puanının ortalaması 
+-	$S^2_x$: toplam test puanının varyansı  
+
+---
+## KR-20 ve KR-21
+
+- İç tutarlılık yöntemleri tek bir uygulamaya dayanmalarından dolayı kullanışlı ve yaygındırlar. Ancak bu yöntemlerin de bazı dezavantajları vardır:
+
+--
+- Eğer tüm test aynı özelliği ölçüyorsa kullanılmalıdırlar. Testin tek bir özelliği ölçmesi durumunda bir maddeyi doğru cevaplayan bireylerin diğer maddeleri de doğru cevaplayacağı varsayılır. 
+
+--
+- Bu durumda testteki maddelerin birbiriyle ve testin tümüyle tutarlı olması gerekir. 
+
+--
+KR-20 / KR-21 Yüksek İse
+  - Uygulanan test hatalardan arınıktır.
+  - Testi oluşturan maddeler homojendir.
+  - Ölçülen değişken tek boyutludur.
+  - Grup heterojendir.
+  - Testin yapı geçerliği yüksektir.
+
+---
+## Cronbach ALFA Yöntemi 
+
+- Cronbach alpha: Derecelendirme ölçeği (ör: 1-5) kullanılan ölçme araçları için hesaplanır.
+
+--
+
+- Psikomotor becerilerin ve tutum ölçeklerinin puanlanmasında dereceleme ölçeği kullanılır. 
+
+--
+
+- Dereceleme ölçeğine  (1,2,3,4 gibi puanlanan) göre hazırlanmış ve kısa cevaplı testlerin güvenirliğini tahmin için kullanılır.
+
+--
+
+- KR-20 gibi testin iç tutarlık katsayısını verir.
+
+---
+## Cronbach ALFA Yöntemi 
+
+- Ölçekte yer alan k sorunun varyansları toplamının genel varyansa oranlanması ile bulunan ve 0 ile 1 arasında değerler alan Alfa katsayısı, bir ağırlıklı standart değişim ortalamasıdır.
+
+- Cronbach Alfa Katsayısı, ölçekte yer alan k sorunun homojen bir yapıyı açıklamak üzere bir bütün oluşturup oluşturmadıklarını araştırır. 
+
+- Alfa Katsayısı, bireysel puanların k soru içeren bir ölçekte sorulara verilen cevapların toplanması ile bulunduğu durumlarda soruların birbirleri ile benzerliğini, yakınlığını, ortaya koyan bir katsayıdır. 
+
+---
+## Değerlendirmeciler Arası Tutarlılık
+
+- Bireylerin ölçülen özelliğe ne derecede sahip olduğuna ilişkin **iki ya da daha** fazla bağımsız gözlemcinin/puanlayıcının verdiği puanların güvenirliğini incelemede kullanılır.
+
+--
+
+- Puanlar arası **tutarlılık** varsa, verilecek puanlar, iki değerlendirmecinin puanlarının ortalaması alınarak verilebilir.
+
+---
+## Hakemler arası güvenirlik
+
+- Eğitimde sadece **objektif puanlanan testler bulunmaz.**
+
+--
+
+- Bazı durumlarda **birden çok puanlayıcı, puanlama yapabilir** (örn: bir resmin puanlanması, spor bilimleri sınavında performansın puanlanması, bir yazılı yoklamanın okunması)
+
+--
+
+- Bu tür ölçümlerde güvenirlik belirlenirken iki farklı yöntem kullanılır:
+  - Puanlama güvenirliği
+  - Puanlayıcı güvenirliği
+
+---
+## Puanlama güvenirliği: 
+
+- Aynı puanlayıcının aynı performansı **farklı zamanlarda iki kez puanlaması** sonucunda elde edilen puanlar arasındaki **korelasyondur.** 
+
+--
+
+- Bu puanın yüksek olması hakemin verdiği puanların kararlı olduğunu göstermektedir.
+
+---
+## Puanlayıcı güvenirliği:
+
+-  Bir testin farklı iki ya da daha fazla puanlayıcının değerlendirilmesi sonucunda elde edilen puanlar arasındaki korelasyonudur.  Kappa katsayısı yardımı ile hesaplanabilir.
+
+--
+
+- Puanlayıcı güvenirliği, yargıcı güvenirliği, gözlemci güvenirliği ve derecelendiriciler arası güvenirlik gibi çeşitli şekillerde adlandırılmaktadır.
+
+
+---
+## Özet
+
+- Gördüğümüz gibi, teste ilişkin güvenirliği kestirmede temel üç yaklaşım bulunmaktadır: 
+
+  - (1) test-tekrar test
+  - (2) alternatif veya paralel formlar 
+  - (3) iç tutarlılık veya maddeler arası tutarlılık.
+
+- Unutmamak gerekir ki, tüm güvenirlik katsayıları aynı hata varyansı kaynaklarını yansıtmaz. 
+
+- Bu nedenle bir güvenirlik katsayısı test geliştirme, test uygulama veya test puanlama ve yorumlamaya ilişkin tek bir hata indeksi verir.
+
+
+---
+## Güvenirliği Etkileyen Faktörler
+
+
+- Bir güvenirlik katsayısının amacı ve kullanımı ile yakından ilişkili olduğu düşünülen tüm durumlar testin kendi doğasıyla da ilişkilidir. 
+
+- Burada dikkate alınan durumlar, 
+
+  - test maddelerinin doğada homojen mi yoksa heterojen mi olduğu 
+
+  - ölçülen niteliğin, yeteneğin veya özelliğin dinamik olduğunun mu yoksa durağan olduğunun mu varsayıldığı
+
+  - test puanları ranjının daralıp daralmadığı
+
+  - testin hız testi mi yoksa güç testi mi olduğu ve 
+
+  - testin ölçüt dayanaklı olup olmadığıdır.
+
+---
+## Güvenirliği Etkileyen Faktörler
+
+
+- Soru sayısını artırmak/Test uzunluğu 
+
+--
+- Soruları açık, net ve anlaşılır olarak hazırlamak 
+
+--
+- Soruların öğrenci seviyesine uygun olması    
+
+--
+- Uygulama yönergesi   
+
+--
+- Öğrencilere yeterli zaman verilmesi  
+
+--
+- Puanlamanın objektif/nesnel olması  
+
+--
+- Testi alan birey ve gruba bağlı faktörler 
+
+--
+- Uygulama koşulları ve zaman  
+--
+- Maddelerin homojenliği 
+
+- Cevaplayıcıların motivasyonu
+
+- Kopyanın engellenmesi  
+
+
+---
+## Ölçmenin Standart Hatası
+
+
+- Ölçme hatası, ölçülen özelliğin bireyde var olan gerçek değeri ile ölçme ile ölçülen özelliğin gözlenen değeri arasındaki fark olarak ifade edilir. 
+
+- $E = X - T$
+
+- $E$ : Ölçme hatası 
+- $X$ : Gözlenen değer
+- $T$ : Gerçek değer
+
+- Bir ölçme  aracından elde edilen her ölçme sonucunda bir miktar  **tesadüfi hata** vardır. Bu hataların standart bir miktarını elde edebilmek için kullanılan eşitliğe *ölçme sonuçlarının standart hatası* adı verilir.
+
+
+---
+## Ölçmenin Standart Hatası
+
+- Ölçmenin standart hatası evrendeki ortalama bir bireyin gerçek puanının gözlenen puanından ne kadar uzakta olacağının kestirilmesinde önemlidir ancak bireyin gerçek puanının gözlenen puan etrafında oluşturulan güven aralığının içerisinde olacağının kesin bir garantisi yoktur. 
+
+- Ayrıca ölçmenin standart hatası değeri gruptaki bireylerin bireysel standart hatalarının ortalamasını yansıtır ve bu ortalama değerin bütün bireyler için eşit olacağını varsaymak gerçekçi değildir. 
+
+---
+## Ölçmenin Standart Hatası
+
+- Birçok test koşulunda, **ölçme hatalarının bireylerin puanlarının yorumlanmasını nasıl etkileyeceği** önemlidir. 
+
+- Gözlenen puanlara **tam olarak ne kadar hata karıştığını belirlemek asla mümkün olmasa da**, klasik test kuramı her bireyin gözlenen puanlarının gerçek puanlarından **tahmini ne kadar değişim gösterdiğini** belirlemek için bir yöntem sağlar. 
+
+$$SEM=\sigma_x\sqrt{1-r_{xx}}$$
+
+- $SEM$ : Ölçmenin standart hatası
+- $\sigma_x$: Testin standart sapması
+- $r_{xx}$: Testin güvenirliği
+
+---
+## Ölçmenin Standart Hatası
+
+$$SEM=\sigma_x\sqrt{1-r_{xx}}$$
+
+- Bir grup gözlenen test puanının **standart sapması 10** puan ve test **güvenirlik katsayısı 0.91** olarak biliniyorsa, ölçmenin standart hatası değeri aşağıdaki şekilde hesaplanabilir: 
+
+$$10*\sqrt{1-0.91}=10*0.3=3$$
+
+
+---
+## Ölçmenin Standart Hatası
+
+- Ölçmenin standart hatasının az olması için, standart sapmasının az, güvenirliğinin yüksek olması gerekmektedir.  **Ölçmenin standart hatasi azaldikca, testin güvenirliği artar.**
+
+--
+
+- Ölçme sonuçlarına karışan hata miktarının artı ya da eksi yönlü olduğu bilinmediğinden hesaplanan standart hata miktarı elde edilen ölçme sonuçlarına bir eklenip bir de çıkarılarak bir aralık değeri elde edilir.
+
+--
+
+- Bu aralığa **güven aralığı** adı verilir. 
+
+- Belirli olasılık değerlerine karşılık gelen farklı güven değerleri hesaplanmaktadır. 
+
+- Ölçme hatalarına ait dağılımın **normal** olduğu varsayılır.
+
+---
+## Normal Dağılım
+
+```{r echo=FALSE, fig.align='center',out.width="60%"}
+knitr::include_graphics("img/normal-curve.jpg")
+```
+]
+
+---
+## Ölçmenin Standart Hatası
+
+Eğer bir öğrencimiz girmiş olduğu sınavdan X puan almışsa, bu öğrencimizin;
+
+--
+
+- %68 olasılıkla puan güven aralığı: X ± 1Standart hata (Sem) → (X- Sem, X+ Sem)
+
+--
+
+- %95 olasılıkla puan güven aralığı: X ± 2Standart hata (Sem) → (X- Sem, X+ 2Sem)
+
+--
+
+- %99 olasılıkla puan güven aralığı: X ± 3Standart hata (Sem) → (X- 3Sem, X+ 3Sem)
+
+
+---
+## Ölçmenin Standart Hatası
+
+Eğer bir öğrencimiz standart hatası 5 olan bir sınavdan 50 puan almışsa, bu öğrencimizin;
+
+--
+
+- %68 olasılıkla puan güven aralığı: X ± 1Standart hata (Sem) → (45,55)
+
+--
+
+- %95 olasılıkla puan güven aralığı: X ± 2Standart hata (Sem) → (40,60)
+
+--
+
+- %99 olasılıkla puan güven aralığı: X ± 3Standart hata (Sem) → (35,65)
+
+
+---
+## Ölçmenin Standart Hatası
+
+- Bir bireyin bir testteki gerçek puanı 50 olsun ve ölçmenin standart hatası 5 puan olarak kestirilmiş olsun. 
+
+--
+
+- Kuramsal olarak eğer bu birey 100 kere test edilebilirse, elde edilen 100 gözlenen puandan yaklaşık 
+
+--
+
+- 68’i 45 ile 55 puan arasında,  32’si ise bu aralığın dışında yer alacaktır. 
+
+---
+## Ölçmenin Standart Hatası
+
+
+- Birçok test uygulamasında birey bir kere test edilir ve sadece bir tane gözlenen puan elde edilir. 
+
+--
+
+- Test için ölçmenin standart hatasının tahmini değeri olsa bile, bireyin gerçek puanının değeri bilinemeyeceğinden, bireyin gerçek puanı etrafında bir aralık oluşturulamaz. 
+
+
+- Ancak kestirilen standart hata değeri kullanılarak bireyin gözlenen puanı etrafında bir güven aralığı oluşturulabilir. 
+
+
+
+
+
+---
+## Yararlanılan Kaynaklar
+- Aybek, E. C. (2019). Verilerin çevrimiçi toplanması, saklanması ve etik. K. Yılmaz ve R. S. Arık (Edt.) *Bilim ve araştırma etiği* içinde (2-11). Ankara: Pegema Yayıncılık.
+
+- Büyüköztürk, Ş., Çakmak E. K., Akgün, Ö. E., Karadeniz, Ş., Demirel, F. (2020). *Eğitimde bilimsel araştırma yöntemleri* (28. Baskı), Ankara: Pegema Yayıncılık.
+
+- Frankel, J. R.; Wallen, N. E. &  Hyun, H. H. (2012). *How to design and evaluate research in education* (8th Edition). New York: McGraw Hill International.
+
+- Ocak, G. (2019). Bilimsel araştırmalarda kullanılan veri toplama yolları. G. Ocak (Edt.), *Eğitimde bilimsel araştırma yöntemleri* içinde (2-61). Ankara: Pegema Yayıncılık.
+
+---
+.center[
+.hand-large[teşekkürler !]
+
+
+`r emo::ji('thanks')` 
+
+]
