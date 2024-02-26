@@ -2,7 +2,7 @@
 title: "EGİTİMDE OLCME VE DEGERLENDİRME"
 subtitle: " <br> `r emo::ji('graph')` Temel Kavramlar"
 author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
-date: "2022-2023 Guz <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+date: "2023-2024 Bahar <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -375,6 +375,8 @@ knitr::include_graphics("img/galileo.jpeg")
 P. Drucker
 
 ]
+
+
 ---
 
 ## Ölçme Nedir?
@@ -1135,6 +1137,7 @@ knitr::include_graphics("img/Resim15.PNG")
 -   Sınıf ortalaması 85 ve 76<85, olduğundan Mert matematik dersinden başarısız olmuştur.
 
 ]
+
 ---
 
 ## Ölçüt
@@ -1491,11 +1494,11 @@ Kullanılan ölçüt türünü belirtiniz?
 
 -   Turgut, M. F. ve Baykul, Y. (2019). Eğitimde Ölçme ve Değerlendirme. PegemA Yayıncılık.
 
----
+<!-- --- -->
 
-# Ödev - I
+<!-- # Ödev - I -->
 
-Ödevinizi moodle üzerinde bulabilirsiniz.
+<!-- Ödevinizi moodle üzerinde bulabilirsiniz. -->
 <!-- -   Ödev - I (+) -->
 
 <!-- -   [Künyesi aşağıda bulunan makaleyi ders öncesinde okuyunuz.](https://drive.google.com/file/d/11rgnn9lSEmckexq7jOxzi_LiIn6VSRrU/view?usp=sharing) -->

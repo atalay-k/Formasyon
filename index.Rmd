@@ -31,7 +31,7 @@ advdate <- function(obj, adv) {
   tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
   return(tmp)
 }
-mon <- ymd(20221003)
+mon <- ymd(20240219)
 
 ```
 
@@ -100,11 +100,8 @@ Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki
 
 # Notlandırma
 
--   **25% Ara Sınav**  
+-   **50% Ara Sınav**  
 
--   **25% Derse Katılım ve Ödevler** 
-    
--    Bu derste sizden **5** ödev yapmanız beklenmektedir. Ödev başlıkları "Ders Planı" icinde ilgili haftada yer almaktadır. Ödevler ve **ders içinde uygulanacak mini sınavlar** genel başarı puanının **%25'ını** oluşturmaktadır. Ödev başlıklarında ödev ağırlıklarını görebilirsiniz. Ödevlerinizi moodle ilgili haftada bulacaksınız.
 
 -   **50% Genel Sınav** tarihi ve uygulanma şekli daha sonra duyurulacaktır.
 
@@ -160,7 +157,7 @@ Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki
 
 
 # Ders Planı
-# `r advdate(mon, 1)`: Dersin ve Kaynakların Tanınımı
+# `r advdate(mon, 1)`: [Dersin ve Kaynakların Tanınımı](sunum/01_Ders.html)
 
 - Tanışma
 
