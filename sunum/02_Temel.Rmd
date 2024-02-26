@@ -47,8 +47,8 @@ degiskentur <- grViz("digraph{
                      node[shape = rectangle, style = empty] 
                      A[label = 'Değişken Türleri']
                      B[label = 'Yapı/Özellik']
-                     C[label = 'Neden-Sonuc']
-                     D[label = 'Deger']
+                     C[label = 'Deger']
+                     D[label = 'Neden-Sonuc']
                      E[label = 'Nicel']
                      F[label = 'Nitel']
                      G[label = 'Sürekli']
@@ -473,7 +473,10 @@ knitr::include_graphics("img/olcme.png")
 --
 
 - Diğer konuya geçebilirim.
-Bu öğrencimin ailesi ile ders çalışma alışkanlığı hakkında görüşmeliyim.
+
+--
+
+- Bu öğrencimin ailesi ile ders çalışma alışkanlığı hakkında görüşmeliyim.
 
 --
 
