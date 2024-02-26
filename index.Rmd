@@ -163,7 +163,6 @@ Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki
 
 - Dersin amacı, içeriği ve kaynaklarının tanıtılması
 
-`r emo::ji('link')` [Lutfen anketi doldurunuz](https://forms.gle/FpVL6iamu1Q87hjd6)<br>
 
 
 ## Ders Planı
