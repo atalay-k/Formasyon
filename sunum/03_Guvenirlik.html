@@ -1,100 +1,41 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>💹 EGİTİMDE ÖLÇME VE DEĞERLENDİRME</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="    👩‍🏫 Dr. Kübra ATALAY KABASAKAL   Hacettepe Üniversitesi" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="slides-style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 💹 EGİTİMDE ÖLÇME VE DEĞERLENDİRME
+]
+.subtitle[
+## <br> 📉 Ölçme Araçlarında Aranan Özellikler
+]
+.author[
+### <br> <br> 👩‍🏫 Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi
+]
+.date[
+### 2023-2024 Bahar <br> <br> <br> <br>📧 <a href="mailto:katalay@hacettepe.edu.tr" class="email">katalay@hacettepe.edu.tr</a>
+]
+
 ---
-title: "`r emo::ji('chart')` EGİTİMDE ÖLÇME VE DEĞERLENDİRME"
-subtitle: " <br> `r emo::ji('graph')` Ölçme Araçlarında Aranan Özellikler"
-author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
-date: "2023-2024 Bahar  <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
-output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    css: ["xaringan-themer.css", "slides-style.css"]
-    nature:
-      highlightStyle: solarized-light
-      highlightLines: true
-      countIncrementalSlides: false
-      ratio: "16:9"
-      slideNumberFormat: |
-        <div class="progress-bar-container">
-          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
-          </div>
-        </div>
----
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(emo)
-library(DiagrammeR)
-library(DiagrammeRsvg) 
-library(rsvg) 
-library(ggplot2)
-hataturleri <- grViz("digraph{
-                     graph[rankdir = TB]
-                     node[shape = rectangle, style = empty] 
-                     A[label = 'Hata Türleri']
-                     B[label = 'Sabit']
-                     C[label = 'Sistematik']
-                     D[label = 'Tesadüfi']
-                     edge[color = red]
-                     A -> B [color = black]
-                     A -> C [color = black]
-                     A -> D [color = black]
-                     }")
-
-hatakaynaklari <- grViz("digraph{
-                     graph[rankdir = TB]
-                     node[shape = rectangle, style = empty] 
-                     A[label = 'Hata Kaynakları']
-                     B[label = 'Ölçmeciden']
-                     C[label = 'Ölçülen Bireyden']
-                     D[label = 'Ortamdan']
-                     E[label = 'Araçtan']
-
-                     edge[color = red]
-                     A -> B [color = black]
-                     A -> C [color = black]
-                     A -> D [color = black]
-                     A -> E [color = black]
-
-                     }")
 
 
-guvenirlik <- grViz("digraph{
-                     graph[rankdir = TB]
-                     node[shape = rectangle, style = empty] 
-                     A[label = 'Güvenirlik Belirleme Yöntemleri']
-                     B[label = 'Korelasyona Dayalı Yöntemler']
-                     C[label = 'Madde Kovaryansına Dayalı Yöntemler']
-                     L[label = 'Değerlendirmeciler Arası Tutarlılık']
-                     D[label = 'Test Tekrar Test']
-                     E[label = 'Parelel Formlar']
-                     F[label = 'İki Yarıya Bölme']
-                     
-                     G[label = 'Cronbach Alfa']
-                     H[label = 'KR-20']
-                     I[label = 'KR-21']
-                     
-                     M[label = 'Yüzde Uyumu']
-                     N[label = 'Sınıf içi Korelasyon']
-                     O[label = 'Kappa Yöntemi'] 
-
-                     
-                     edge[color = red]
-                     A -> B [color = black]
-                     A -> C [color = black]
-                     B -> D [color = black]
-                     B -> E [color = black]
-                     B -> F [color = black]
-
-                     C -> G [color = black]
-                     C -> H [color = black]
-                     C -> I [color = black]
-                     
-                     L -> M [color = black]
-                     L -> N [color = black]
-                     L -> O [color = black]
-                     }")
-```
 
 
-#  Güvenirlik .huge[`r emo::ji("stats")`]
+
+#  Güvenirlik .huge[📊]
 
 .hand[İçerik...]
 
@@ -190,9 +131,8 @@ guvenirlik <- grViz("digraph{
 
 --
 
-```{r echo=FALSE, fig.align='center',out.width="100%"}
-hatakaynaklari
-```
+<div class="grViz html-widget html-fill-item" id="htmlwidget-f8f2629468d698a01c13" style="width:100%;height:504px;"></div>
+<script type="application/json" data-for="htmlwidget-f8f2629468d698a01c13">{"x":{"diagram":"digraph{\n                     graph[rankdir = TB]\n                     node[shape = rectangle, style = empty] \n                     A[label = \"Hata Kaynakları\"]\n                     B[label = \"Ölçmeciden\"]\n                     C[label = \"Ölçülen Bireyden\"]\n                     D[label = \"Ortamdan\"]\n                     E[label = \"Araçtan\"]\n\n                     edge[color = red]\n                     A -> B [color = black]\n                     A -> C [color = black]\n                     A -> D [color = black]\n                     A -> E [color = black]\n\n                     }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
@@ -307,11 +247,9 @@ hatakaynaklari
 
 .pull-right[
 
-<br>
-<br>
-```{r echo=FALSE, fig.align='center',out.width="60%"}
-knitr::include_graphics("img/Guvenilikanlam.PNG",error = FALSE)
-```
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="img/Guvenilikanlam.PNG" width="60%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -322,22 +260,21 @@ knitr::include_graphics("img/Guvenilikanlam.PNG",error = FALSE)
 
 .pull-left[
 
-<br>
-<br>
+&lt;br&gt;
+&lt;br&gt;
 
-$X = T \pm E$
+`\(X = T \pm E\)`
 
-- $X:$ Gözlenen puan
+- `\(X:\)` Gözlenen puan
 
-- $T:$ Gerçek puan
+- `\(T:\)` Gerçek puan
 
-- $E:$ Hata puan
+- `\(E:\)` Hata puan
 ]
 
 .pull-right[
-```{r echo=FALSE, fig.align='center',out.width="100%"}
-hataturleri
-```
+<div class="grViz html-widget html-fill-item" id="htmlwidget-03c83b02714427814617" style="width:100%;height:504px;"></div>
+<script type="application/json" data-for="htmlwidget-03c83b02714427814617">{"x":{"diagram":"digraph{\n                     graph[rankdir = TB]\n                     node[shape = rectangle, style = empty] \n                     A[label = \"Hata Türleri\"]\n                     B[label = \"Sabit\"]\n                     C[label = \"Sistematik\"]\n                     D[label = \"Tesadüfi\"]\n                     edge[color = red]\n                     A -> B [color = black]\n                     A -> C [color = black]\n                     A -> D [color = black]\n                     }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 ---
 ## Ölçmede Hata
@@ -433,106 +370,81 @@ hataturleri
 -   İki değişken arasındaki ilişkiyi veren kat sayıya **korelasyon katsayısı** adı verilir.
 --
 
--   Korelasyon katsayısı $r_{xy}$ , ilişkinin miktarını sayısal olarak ifade eden istatistiksel değerdir.
+-   Korelasyon katsayısı `\(r_{xy}\)` , ilişkinin miktarını sayısal olarak ifade eden istatistiksel değerdir.
 --
 
 -   Bu kat sayı iki değişkenin birlikte değişip değişmediğini ve bu değişimin yönünü ve derecesini gösterir.
 --
 
--   Korelasyon kat sayısı $+1.00$ ile $-1.00$ arasında bir değer **alır.**![](Resim24.PNG){width="144"}
+-   Korelasyon kat sayısı `\(+1.00\)` ile `\(-1.00\)` arasında bir değer **alır.**![](Resim24.PNG){width="144"}
 
 ---
 ## Korelasyon
 
 **Korelasyon katsayısı;**
 
--   $+1.00$ 'e yaklaştıkça aynı yöndeki **ilişki artar.**
+-   `\(+1.00\)` 'e yaklaştıkça aynı yöndeki **ilişki artar.**
 
 --
 
--   $-1.00$ 'e yaklaştıkça ters yönde **ilişki artar.**
+-   `\(-1.00\)` 'e yaklaştıkça ters yönde **ilişki artar.**
 
 --
 
--   $0.00$ ise arada **ilişki yoktur.**
+-   `\(0.00\)` ise arada **ilişki yoktur.**
 
 --
 
-- Korelasyon katsayısının başındaki işaret $(-, +)$ bize sadece **ilişkinin yönünü** belirtir.
+- Korelasyon katsayısının başındaki işaret `\((-, +)\)` bize sadece **ilişkinin yönünü** belirtir.
 
 --
 
-- Güçlü bir ilişkiyi bu katsayının $\pm1$ yakın olmasından anlarız. 0,00'a yaklaşması ilişkinin zayıf olduğuna işarettir.
+- Güçlü bir ilişkiyi bu katsayının `\(\pm1\)` yakın olmasından anlarız. 0,00'a yaklaşması ilişkinin zayıf olduğuna işarettir.
 
 ---
 ## Korelasyon
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-kor0 <- ggplot(mtcars, aes(x=drat, y=qsec)) +
-  geom_point() +
-  labs( x="Kahvaltıda tüketilen ekmek miktarı", y = "Test Puanı")+
-  theme_bw()
-kor0
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
 ]
 
 --
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-kor0 + geom_smooth(method=lm, se=FALSE)
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
 ]
 
 --
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-kor0+ geom_smooth(method=lm, se=FALSE) +
-  stat_ellipse()
-kor0deger <- round(cor(mtcars$drat, mtcars$qsec), 3)
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
 ]
 
 --
 
-.alert[Kahvaltıda tüketilen ekmek miktarı ve test puanı arasındaki korelasyon `r kor0deger`]
+.alert[Kahvaltıda tüketilen ekmek miktarı ve test puanı arasındaki korelasyon 0.091]
 
 
 ---
 ## Korelasyon
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-mtcars$new  <- mtcars$gear*60 + sample(-15:15,32,replace = TRUE)
-kororta <- ggplot(mtcars, aes(x=new, y=mpg)) +
-  geom_point() +
-  labs( x="Sosyal Faliyetlere Ayrılan Zaman (dk)", y = "Test Puanı")+
-  theme_bw()
-kororta
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
 ]
 
 --
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-kororta + geom_smooth(method=lm, se=FALSE)
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
 ]
 
 --
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-kororta+ geom_smooth(method=lm, se=FALSE) +
-  stat_ellipse()
-korortadeger <- round(cor(mtcars$mpg, mtcars$new ), 3)
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
 ]
 
-.alert[Sosyal faliyetlere ayrılan zaman ve test puanı arasındaki korelasyon `r korortadeger`]
+.alert[Sosyal faliyetlere ayrılan zaman ve test puanı arasındaki korelasyon 0.474]
 
 
 
@@ -546,36 +458,22 @@ korortadeger <- round(cor(mtcars$mpg, mtcars$new ), 3)
 
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-set.seed(42)
-mtcars$dispnew  <- mtcars$disp /2 + 60 + sample(-5:5, 32, replace = TRUE)
-koryuksek <- ggplot(mtcars, aes(x=dispnew, y=disp)) +
-  geom_point() +
-  labs( x="Ders Dışı Öğrenmeye Ayrılan Zaman (dk)", y = "Test Puanı")+
-  theme_bw()
-koryuksek
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
 ]
 
 --
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-koryuksek + geom_smooth(method=lm, se=FALSE)
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
 ]
 
 --
 
 .three-column[
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-koryuksek+ geom_smooth(method=lm, se=FALSE) +
-  stat_ellipse()
-koryuksekdeger <- round(cor(mtcars$disp, mtcars$dispnew ), 3)
-```
+![](03_Guvenirlik_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
 ]
 
-.alert[Ders dışı öğrenmeye ayrılan zaman ve test puanı arasındaki korelasyon `r koryuksekdeger`]
+.alert[Ders dışı öğrenmeye ayrılan zaman ve test puanı arasındaki korelasyon 0.999]
 
 
 ---
@@ -625,24 +523,20 @@ koryuksekdeger <- round(cor(mtcars$disp, mtcars$dispnew ), 3)
 ---
 ##   Korelasyon
 
-```{r echo=FALSE, fig.align='center',out.width="75%"}
-knitr::include_graphics("img/Korelasyon.PNG",error = FALSE)
-```
+&lt;img src="img/Korelasyon.PNG" width="75%" style="display: block; margin: auto;" /&gt;
 
 ---
 ##   Korelasyon
 .pull-left[
-```{r echo=FALSE, fig.align='center',out.width="100%"}
-knitr::include_graphics("img/Korelasyon1.PNG",error = FALSE)
-```
+&lt;img src="img/Korelasyon1.PNG" width="100%" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
-`r emo::ji('link')` [Korelasyon hesaplamaları_excel](https://docs.google.com/spreadsheets/d/1Ha0v62qYpwXhSo-7bx_-hvh_KRmYYic3/edit?usp=sharing&ouid=117160923198825369445&rtpof=true&sd=true)<br>
+🔗 [Korelasyon hesaplamaları_excel](https://docs.google.com/spreadsheets/d/1Ha0v62qYpwXhSo-7bx_-hvh_KRmYYic3/edit?usp=sharing&amp;ouid=117160923198825369445&amp;rtpof=true&amp;sd=true)&lt;br&gt;
 
-`r emo::ji('link')` [Korelasyon hesaplamaları_1](https://langtest.jp/shiny/cor/)<br>
+🔗 [Korelasyon hesaplamaları_1](https://langtest.jp/shiny/cor/)&lt;br&gt;
 
-`r emo::ji('link')` [Korelasyon hesaplamaları_2](https://shiny.rit.albany.edu/stat/rectangles/#:~:text=Correlation%20and%20Covariance%20Visualiation%20App%20with%20Shiny&text=We%20use%20the%20Correlation%20coefficient,hours%20of%20sleep%20and%20irritability.)<br>
+🔗 [Korelasyon hesaplamaları_2](https://shiny.rit.albany.edu/stat/rectangles/#:~:text=Correlation%20and%20Covariance%20Visualiation%20App%20with%20Shiny&amp;text=We%20use%20the%20Correlation%20coefficient,hours%20of%20sleep%20and%20irritability.)&lt;br&gt;
 ]
 
 
@@ -651,18 +545,17 @@ knitr::include_graphics("img/Korelasyon1.PNG",error = FALSE)
 ##   Güvenirlik
 
 
-```{r echo=FALSE, fig.align='center',out.width="100%"}
-guvenirlik
-```
+<div class="grViz html-widget html-fill-item" id="htmlwidget-e5cbeb720c5938a8c0c3" style="width:100%;height:504px;"></div>
+<script type="application/json" data-for="htmlwidget-e5cbeb720c5938a8c0c3">{"x":{"diagram":"digraph{\n                     graph[rankdir = TB]\n                     node[shape = rectangle, style = empty] \n                     A[label = \"Güvenirlik Belirleme Yöntemleri\"]\n                     B[label = \"Korelasyona Dayalı Yöntemler\"]\n                     C[label = \"Madde Kovaryansına Dayalı Yöntemler\"]\n                     L[label = \"Değerlendirmeciler Arası Tutarlılık\"]\n                     D[label = \"Test Tekrar Test\"]\n                     E[label = \"Parelel Formlar\"]\n                     F[label = \"İki Yarıya Bölme\"]\n                     \n                     G[label = \"Cronbach Alfa\"]\n                     H[label = \"KR-20\"]\n                     I[label = \"KR-21\"]\n                     \n                     M[label = \"Yüzde Uyumu\"]\n                     N[label = \"Sınıf içi Korelasyon\"]\n                     O[label = \"Kappa Yöntemi\"] \n\n                     \n                     edge[color = red]\n                     A -> B [color = black]\n                     A -> C [color = black]\n                     B -> D [color = black]\n                     B -> E [color = black]\n                     B -> F [color = black]\n\n                     C -> G [color = black]\n                     C -> H [color = black]\n                     C -> I [color = black]\n                     \n                     L -> M [color = black]\n                     L -> N [color = black]\n                     L -> O [color = black]\n                     }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ???
 - Testin bir uygulamasından elde edilen -sonuçların diğer bir uygulamasından elde edilen sonuçlarla tutarlılığı (test-tekrar test güvenirliği) 
-<br>
+&lt;br&gt;
 - İki eşdeğer test formundan elde edilen sonuçların tutarlılığı (alternatif-test güvenirliği)
-<br>
+&lt;br&gt;
 - Testteki bir maddenin diğer maddelerle tutarlılığı (iç-tutarlılık güvenirliği)
-<br>
+&lt;br&gt;
 - Bu üç güvenirlik yaklaşımı güvenirlik kestiriminin üç farklı yöntemi olarak ele alınır. 
 
 
@@ -727,7 +620,7 @@ guvenirlik
 ---
 ##Standart Sapma
 
-`r emo::ji('link')` [Standart Sapma](https://alhughes.shinyapps.io/Week4/)<br>
+🔗 [Standart Sapma](https://alhughes.shinyapps.io/Week4/)&lt;br&gt;
 
 
 
@@ -1006,13 +899,13 @@ guvenirlik
 
 - Bu problemin çözümü için Spearman Brown tahmin formülü kullanılarak tüm testin **düzeltilmiş güvenirlik katsayısı elde edilebilir.** 
 
-$$r_{XX'} = \frac{2*r_{12}}{1+r_{12}}$$
+`$$r_{XX'} = \frac{2*r_{12}}{1+r_{12}}$$`
 
 Burada 
 
--	$r_{12}$: Yarı testler arasındaki korelasyon katsayısı
+-	`\(r_{12}\)`: Yarı testler arasındaki korelasyon katsayısı
 
--	$r_{XX'}$: Tüm testin güvenirlik kestirimi
+-	`\(r_{XX'}\)`: Tüm testin güvenirlik kestirimi
 
 
 ---
@@ -1066,13 +959,13 @@ KR-20 aşağıdaki formülle hesaplanır:
 - KR-20; 0 – 1 puanlamanın yapıldığı ölçme araçları için hesaplanır.
 
 
-$$KR-20=\frac{K}{K-1}\frac{\sum_{i=1}^{K}p_i(1-p_i)}{S^2_x}$$
+`$$KR-20=\frac{K}{K-1}\frac{\sum_{i=1}^{K}p_i(1-p_i)}{S^2_x}$$`
 
 Burada  
-- $K$:         Testteki madde sayısı  
--	$p_i$:       i maddesinin güçlüğü  
--	$pi(1-pi)$:  i maddesinin varyansı  
--	$S^2_x$:     toplam test puanının varyansı  
+- `\(K\)`:         Testteki madde sayısı  
+-	`\(p_i\)`:       i maddesinin güçlüğü  
+-	`\(pi(1-pi)\)`:  i maddesinin varyansı  
+-	`\(S^2_x\)`:     toplam test puanının varyansı  
 
 ---
 ## Kuder Richardson 21 (KR-21) 
@@ -1081,11 +974,11 @@ Burada
 
 - KR-21 olarak adlandırılan bu formülde KR-20 formülünde olduğu gibi her bir madde varyansını hesaplamaya gerek yoktur. KR-21 aşağıdaki formülle hesaplanır: 
 
-$$KR-21=\frac{K}{K-1}\frac{K\overline{X}-\overline{X}^2}{KS^2_x}$$
+`$$KR-21=\frac{K}{K-1}\frac{K\overline{X}-\overline{X}^2}{KS^2_x}$$`
 Burada
 - **K**: Testteki madde sayısı   
-- $\overline{X}$: toplam test puanının ortalaması 
--	$S^2_x$: toplam test puanının varyansı  
+- `\(\overline{X}\)`: toplam test puanının ortalaması 
+-	`\(S^2_x\)`: toplam test puanının varyansı  
 
 ---
 ## KR-20 ve KR-21
@@ -1247,11 +1140,11 @@ KR-20 / KR-21 Yüksek İse
 
 - Ölçme hatası, ölçülen özelliğin bireyde var olan gerçek değeri ile ölçme ile ölçülen özelliğin gözlenen değeri arasındaki fark olarak ifade edilir. 
 
-- $E = X - T$
+- `\(E = X - T\)`
 
-- $E$ : Ölçme hatası 
-- $X$ : Gözlenen değer
-- $T$ : Gerçek değer
+- `\(E\)` : Ölçme hatası 
+- `\(X\)` : Gözlenen değer
+- `\(T\)` : Gerçek değer
 
 - Bir ölçme  aracından elde edilen her ölçme sonucunda bir miktar  **tesadüfi hata** vardır. Bu hataların standart bir miktarını elde edebilmek için kullanılan eşitliğe *ölçme sonuçlarının standart hatası* adı verilir.
 
@@ -1270,20 +1163,20 @@ KR-20 / KR-21 Yüksek İse
 
 - Gözlenen puanlara **tam olarak ne kadar hata karıştığını belirlemek asla mümkün olmasa da**, klasik test kuramı her bireyin gözlenen puanlarının gerçek puanlarından **tahmini ne kadar değişim gösterdiğini** belirlemek için bir yöntem sağlar. 
 
-$$SEM=\sigma_x\sqrt{1-r_{xx}}$$
+`$$SEM=\sigma_x\sqrt{1-r_{xx}}$$`
 
-- $SEM$ : Ölçmenin standart hatası
-- $\sigma_x$: Testin standart sapması
-- $r_{xx}$: Testin güvenirliği
+- `\(SEM\)` : Ölçmenin standart hatası
+- `\(\sigma_x\)`: Testin standart sapması
+- `\(r_{xx}\)`: Testin güvenirliği
 
 ---
 ## Ölçmenin Standart Hatası
 
-$$SEM=\sigma_x\sqrt{1-r_{xx}}$$
+`$$SEM=\sigma_x\sqrt{1-r_{xx}}$$`
 
 - Bir grup gözlenen test puanının **standart sapması 10** puan ve test **güvenirlik katsayısı 0.91** olarak biliniyorsa, ölçmenin standart hatası değeri aşağıdaki şekilde hesaplanabilir: 
 
-$$10*\sqrt{1-0.91}=10*0.3=3$$
+`$$10*\sqrt{1-0.91}=10*0.3=3$$`
 
 
 ---
@@ -1306,9 +1199,7 @@ $$10*\sqrt{1-0.91}=10*0.3=3$$
 ---
 ## Normal Dağılım
 
-```{r echo=FALSE, fig.align='center',out.width="60%"}
-knitr::include_graphics("img/normal-curve.jpg")
-```
+&lt;img src="img/normal-curve.jpg" width="60%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -1383,7 +1274,7 @@ Eğer bir öğrencimiz standart hatası 5 olan bir sınavdan 50 puan almışsa, 
 
 - Büyüköztürk, Ş., Çakmak E. K., Akgün, Ö. E., Karadeniz, Ş., Demirel, F. (2020). *Eğitimde bilimsel araştırma yöntemleri* (28. Baskı), Ankara: Pegema Yayıncılık.
 
-- Frankel, J. R.; Wallen, N. E. &  Hyun, H. H. (2012). *How to design and evaluate research in education* (8th Edition). New York: McGraw Hill International.
+- Frankel, J. R.; Wallen, N. E. &amp;  Hyun, H. H. (2012). *How to design and evaluate research in education* (8th Edition). New York: McGraw Hill International.
 
 - Ocak, G. (2019). Bilimsel araştırmalarda kullanılan veri toplama yolları. G. Ocak (Edt.), *Eğitimde bilimsel araştırma yöntemleri* içinde (2-61). Ankara: Pegema Yayıncılık.
 
@@ -1392,6 +1283,144 @@ Eğer bir öğrencimiz standart hatası 5 olan bir sınavdan 50 puan almışsa, 
 .hand-large[teşekkürler !]
 
 
-`r emo::ji('thanks')` 
+🙇‍♀ 
 
 ]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "solarized-light",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
