@@ -166,7 +166,7 @@ degerturleri <- grViz("digraph{
 knitr::include_graphics("img/Resim1.png", error=FALSE)
 ```
 
---
+---
 # Ölçme Nedir?
 
 -   Hayatın her alanında olduğu gibi **eğitim** alanında da, işin neresinde olduğumuzu, ulaştığımız sonuçları, başarılı olup olamadığımızı görmek ve bundan bir karar çıkarmak zorundayız.
@@ -950,7 +950,7 @@ olcektur
 
 
 
-| **İsim** | **Doğru Sayısı** | **Not** | **Başarı Sırası** | **Karar**   |
+| **İsim** | **Kalem Sayısı** | **Not** | **Başarı Sırası** | **Karar**   |
 |----------|------------------|---------|-------------------|-------------|
 | Ekin     | 10               | 10      | 1.                | Başarılı    |
 | Arda     | 9                | 9       | 2.                | Başarılı    |
@@ -966,14 +966,11 @@ olcektur
 
 ## Ölçek Türleri
 
-<br>
-<br>
-<br>
   
 |               | **Zeynep** | **Aras** | **Elif** | **Deniz** |
 |---------------|------------|----------|----------|-----------|
-| Eşit Oranlı   | 185 cm     | 165 cm   | 100 cm   | 85 cm     |
-| Eşit Aralıklı | 85         | 65       | 45       | 15        |
+| Oranlı        | 185 cm     | 165 cm   | 100 cm   | 85 cm     |
+| Aralıklı      | 85         | 65       | 45       | 15        |
 | Sıralama      | 1\.        | 2\.      | 3\.      | 4\.       |
 | Sınıflama     | Uzun       | Uzun     | Kısa     | Kısa      |
 
@@ -981,16 +978,13 @@ olcektur
 
 ## Ölçek Türleri
 
-<br>
-<br>
-<br>
   
 | **Ölçek**   | **Başlangıç Noktası** | **Birimi** | **Sıra** | **Fark** | **Oran** |
 |-------------|-----------------------|------------|----------|----------|----------|
 | Sınıflama   | Yok                   | Yok        | \-       | \-       | \-       |
 | Sıralama    | Değişken              | Değişken   | Var      | \-       | \-       |
-| Eşit Aralık | Keyfi                 | Keyfi      | Var      | Var      | \-       |
-| Eşit Oranlı | Mutlak                | Mutlak     | Var      | Var      | Var      |
+|  Aralık | Keyfi                 | Keyfi      | Var      | Var      | \-       |
+|  Oranlı | Mutlak                | Mutlak     | Var      | Var      | Var      |
 
 ---
 
