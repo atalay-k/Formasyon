@@ -378,9 +378,6 @@ hataturleri
 -   Sınav sonuçlarını düşük bulan bir öğretmenin tüm öğrencilerin puanına 5 puan ilave etmesi
 --
 
--   Bir yabancı dil sınavında okuyucunun yanlış söylemesi nedeniyle öğrencilerin bir kelimeyi yanlış yazmaları ve bu kelimenin metnin içinde birden fazla geçmesi
---
-
 -   Bir öğretmenin yaptığı bir yazılı yoklama sınavında az süre vermesi nedeniyle öğrencilerin tamamının son soruyu yanıtlayamaması
 --
 
