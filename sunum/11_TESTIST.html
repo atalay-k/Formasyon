@@ -18,13 +18,13 @@ class: center, middle, inverse, title-slide
 # 💪 EGİTİMDE ÖLÇME VE DEĞERLENDİRME
 ]
 .subtitle[
-## <br> 📈 TEST İSTATISTIKLERI
+## <br> 📊 TEST İSTATISTIKLERI
 ]
 .author[
 ### <br> <br> 👩‍🏫 Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi
 ]
 .date[
-### 2022-2023 Güz <br> <br> <br> <br>📧 <a href="mailto:katalay@hacettepe.edu.tr" class="email">katalay@hacettepe.edu.tr</a>
+### <br> <br> <br> <br>📧 <a href="mailto:katalay@hacettepe.edu.tr" class="email">katalay@hacettepe.edu.tr</a>
 ]
 
 ---
@@ -47,6 +47,382 @@ layout: true
 
 
 
+
+---
+
+
+
+.pull-left[
+
+## MERKEZİ EĞİLİM ÖLÇÜLERİ
+
+- Ortalama
+
+- Mod
+
+- Medyan
+]
+
+.pull-right[
+
+## MERKEZİ DAĞILIM ÖLÇÜLERİ
+
+-   Ranj
+
+-   Çeyrek Sapma
+
+-   Standart Sapma/Varyans
+]
+
+
+---
+# EĞİLİM ÖLÇÜLERİ
+
+- **ARASINAV puanları**
+
+.middle[50 50 60 60 60 60 60 60 70 70 70 70 70 80 80 80 80 90 90 90]
+
+- **FINAL puanları**
+
+.middle[40  40  50  50  50  50  60  60  60  70  70  70  80  80  90  90  90 100 100 100]
+
+---
+## EĞİLİM ÖLÇÜLERİ
+
+
+![](11_TESTIST_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+---
+## EĞİLİM ÖLÇÜLERİ
+
+- Mod (tepe değer)
+  - Puanlar içinde en çok tekrarlanan puandır.
+  - Frekansı en yüksek puandır
+  
+- Medyan (ortanca)
+  - Sıralanmış verilerin tam ortasında yer alan puandır.
+
+- Aritmetik ortalama
+ - Puanların toplamının puan sayısına (öğrenci sayısına) bölünmesiyle elde edilen değerdir. Kısaca “ortalama” olarak da bilinir. 
+
+
+---
+## EĞİLİM ÖLÇÜLERİ
+## MOD
+
+- **ARASINAV puanları**
+
+`\(\frac{50 +  50 + 60 + 60 + 60 + 60 +  60 + 60 + 70 + 70 + 70 + 70 +  70 + 80 +  80 + 80 +  80 +  90 + 90 +  90}{20} = 70\)`
+
+- **FINAL puanları**
+  
+`\(\frac{40 + 40 + 50 + 50 + 50 + 50 + 60 + 60 + 60 + 70 + 70 + 70 + 80 + 80 + 90 + 90 + 90 + 100 100  + 100}{20}  = 70\)`
+
+
+---
+
+.pull-left[
+
+- **ARASINAV puanları**
+
+|Puan|Frekans|
+|---|---|
+| 50 | 2 |
+| 60 | 6 |
+| 70 | 5 |
+| 80 | 4 |
+| 90 | 3 |
+]
+
+.pull-right[
+
+- **FINAL puanları**
+
+|Puan|Frekans|
+|---|---|
+| 40 | 2 |
+| 50 | 4 |
+| 60 | 3 |
+| 70 | 3 |
+| 80 | 2 |
+| 90 | 3 |
+| 100 | 3 |
+]
+
+]
+ 
+ 
+
+
+---
+# DAĞILIM ÖLÇÜLERİ
+
+- grafiklerden yukarıdaki grafik bir İngilizce dersinde bir grup öğrenciye uygulanan arasınavdan alttaki grafik ise aynı gruba uygulanan finalden alınan puanları göstermektedir. 
+
+- her iki sınavdan  alınan puanların aritmetik ortalaması eşit olup 70´dir.
+
+- İki sınavdan alınan puanların ortalaması birbirine eşit olmasına rağmen puanların dağılımı birbirinden oldukça farklıdır. 
+
+- Öğrencilerin puanları arasındaki fark finalde arasınava göre daha fazladır
+
+---
+## Ranj (Dizi Genişliği)
+
+- Puanların hangi aralıkta değiştiğini gösteren en basit merkezi dağılım ölçüsüdür. Bir başka deyişle, en yüksek puan ile en düşük puan arasındaki farktır.
+
+
+| Puan |  Frekans |     tf | Oran|
+|---|---|---|---|
+| 39 |3     |      3 |0.14   |
+ |  43 |2        |   5 | 0.09   |
+  |  45 |4 |          9 |0.18 |  
+  |  49 |4  |        13| 0.18  | 
+   | 53 |7  |        20| 0.32  | 
+   | 55 |2   |       22| 0.09  |
+
+---
+## Ranj (Dizi Genişliği)
+
+
+
+![](11_TESTIST_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+
+---
+## Ranj (Dizi Genişliği)
+
+- Ranj tamamen iki uç değer kullanılarak ve dağılımdaki diğer puanlar göz ardı edilerek hesaplanan bir değişim ölçüsü olduğundan yeterince hassas ve kullanışlı değildir.
+
+- Bir dağılımdaki uç değerlerin diğer puanlardan kopuk olması, puanların yayılımı hakkında yanıltıcı bilgi verir.
+ iki grafikteki puan dağılımlarının ranjı 18-1=17 olup puanların 17 puanlık bir aralıkta dağıldığını ifade eder. Ancak birinci grubun daha heterojen, ikinci grubunsa daha homojen bir dağılım gösterdiği gözlenmektedir 
+
+- Ranj, gruptaki puanların birbirine ne kadar yakın veya uzak olduğu ile ilgili bir bilgi vermemektedir.  
+
+
+---
+## Çeyrek Sapma
+
+Puanların değişkenliğinin bir ölçüsü olan ranjın uç değerlerden etkilenmesi kısıtlılığını gideren bir ölçüdür. Çeyrek sapma, %75. puan ile %25. puan arasındaki farkın yarısı hesaplanarak elde edilir.
+
+![](img/CeyrekSapma.png)
+
+
+---
+## **Standart sapma**
+
+-   Standart sapma en sık kullanılan ve en önemli değişim ölçüsüdür.
+-   Standart sapma dağılımın ortalamasını referans noktası olarak kullanır ve her bir puan ve ortalama arasındaki uzaklığı ele alarak değişkenliği ölçer.
+-   Böylece puanların genel olarak ortalamaya ne kadar yakın veya ortalamadan ne kadar uzak olup olmadığını belirler. Diğer bir ifadeyle puanların bir arada toplanıp toplanmadığını veya yayılıp yayılmadığını belirtir.
+-   Özetle standart sapma ortalamadan ortalama uzaklığı tahmin eder.
+-   Puanların farklılığı arttıkça standart sapma değeri artar, puanların farklılığı azaldıkça (benzerliği arttıkça) standart sapma değeri azalır.
+
+---
+## **Standart sapma / Varyans**
+
+
+
+![](11_TESTIST_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+
+---
+## **Standart sapma / Varyans**
+
+-   Standart sapma, sapma puanı kavramına dayanır.
+
+-   Bir grupta X ham puanına sahip her bir birey için sapma puanı, x, aşağıdaki şekilde tanımlanabilir:
+
+-   Böylece bir sapma puanı, her bir bireyin puanı ve grup ortalaması arasındaki uzaklıktır.
+
+---
+## **Standart sapma / Varyans**
+
+| `\(x_{i}\)`     | `\(x_{i}\)`     | `\(x_{i}^2\)` |
+|:-------:|:------------------:|:------------------------:|
+| 8     | 8-3 =5           | 25                     |
+| 1     | 1-3=-2           | 4                      |
+| 3     | 3-3=0            | 0                      |
+| 0     | 0-3=-3           | 9                      |
+|       | = 5 - 2 +0 -3 =0 | =25 + 4 +0 +9 = 38 / 4 |
+
+Ortalama dağılımın denge noktası olduğundan, ortalamanın üstündeki uzaklıkların toplamı, ortalamanın altındaki uzaklıkların toplamına eşittir. Bu nedenle sapma puanların toplamı HER ZAMAN sıfıra eşittir.
+
+---
+## **Standart sapma / Varyans**
+
+-   Sapma puanların karesinin alınması işlemi, sadece artı ve eksi işaretlerden kurtulmaya yol açmaz, aynı zamanda kare uzaklıklara dayanan değişim ölçüsünün elde edilmesine neden olur.
+
+-   Ancak varyans bazı sonuç çıkarmaya dayalı istatistiksel yöntemlerde kullanışlı olsa da, kare uzaklık kavramı anlaşılması kolay bir betimleyici ölçü değildir.
+
+-   Varyansın kare kökünün alınmasıyla elde edilen standart sapma kavramsal olarak ortalamadan olan ortalama uzaklığın ölçüsünü sağlar ve ile gösterilir.
+
+---
+## **Standart sapma / Varyans**
+
+|                                |                                   |
+|--------------------------------|-----------------------------------|
+| ![](img/evrenvar.JPG)| ![](img/orneklemvar.JPG) |
+
+- Örneklemler evrenlerinden daha az değişkenlik gösterme eğilimindedir. Bir örneklemin evrenine göre daha az değişken olması eğilimi örneklem değişkenliğinin evren değişkenliğinin yanlı kestirimini vermesi anlamına gelmektedir. Bu yanlılık evren değerinin daha düşük kestirilmesi yönündedir.
+
+
+- Yetişkinlerin boy uzunlukları evreni normal bir dağılım gösterir. Bu evrenden bir örneklem seçilirse, uzunlukları ortalamaya yakın bireylerin örneklemde yer alma şansı daha yüksektir. Sonuç olarak örneklemdeki puanlar evrendeki puanlardan daha az yayılım göstereceklerdir. 
+
+
+---
+## **Standart sapma / Varyans**
+
+![](img/evrendegiskenligi.png)
+
+---
+## **Standart sapma / Varyans**
+
+![](img/dagilimlar.png)
+
+**Standart sapma ve varyans ile dağılımın sivriliği arasında bir ilişki vardır.**
+
+-   Standart sapma ve varyans değeri düştükçe, puanlar arasındaki fark azalır, dolayısıyla dağılımın heterojenliği azalır ve dağılım sivrileşir.
+-   Standart sapma ve varyans değeri arttıkça, puanlar arasındaki fark artar, dolayısıyla dağılımın heterojenliği artar ve dağılım basıklaşır.
+
+
+---
+# Normal Dağılım
+
+**Eğitimde ve psikolojideki değişkenlerin çoğu, evrende normal dağılıma sahip oldugu varsayilir.**
+
+**Normal dağılım eğrisi simetrik bir eğridir.**
+
+-   Mod, medyan ve aritmetik ortalama birbirine eşit ve dağılımın tam orta noktasındadır.
+-   Ölçme sonuçlarının büyük bir kısmı orta kısımda yani merkezi eğilim ölçüsünün etrafında toplanır.
+-   Orta kısımdan sağa ve sola gidildikçe, yığılmalar önce yavaş yavaş sonra hızlı bir şekilde düşerek iki uçta kuyruk oluşturur.
+
+---
+## Normal Dağılım
+
+![](img/normaldagilim.png)
+
+
+
+
+- Normal dağılım istatistikteki en önemli dağılımdır.
+Bir cok fiziksel, psikoloji, psikomotor karekterlerin ölçümleri normal dağılım gösterir.
+Örnek: Çocukların reaksiyon hızları, boy
+
+- Normal dağılım göstermeyen ölçümler: Yas, kişilerin eğitim düzeyleri,mdin, ırk
+
+- Ozellik: Herhangi bir dağılımı oluşturan her bir gözleme sabit bir sayı eklenirse dağılımın şekli degişmez. Benzer şekilde her bir gözlem belirli bir sayı ile çarpılır ya
+da bölünürse dağılımın şekli değişmez.
+
+
+---
+## Standart Puanlar
+
+-   Farklı dağılımlara sahip gruplardaki bireylerin ölçme sonuçlarını birbiriyle arşılaştırabilmek için dağılımların merkezi eğilim ve değişim ölçülerinin birbirine eşit olması gerekir.
+
+-   Eğer iki dağılımın ortalaması ve standart sapması birbirinden farklıysa, bu dağılımların aynı ortalama ve standart sapmaya sahip bir dağılıma dönüştürülmesi gerekir.
+
+-   Böyle bir ölçme ölçme sonuçlarının yorumlanmasını kolaylaştırır, farklı dağılımlardaki ölçme sonuçlarının birbiriyle karşılaştırılabilmesine olanak sağlar.
+
+---
+## Standart Puanlar
+
+-   Herhangi bir dağılımın aritmetik ortalaması ve standart sapması biliniyorsa bu dağılımı oluşturan gözlemlerin birbirlerine göre dağılımın neresinde yer aldıklarını kestirebiliriz.
+-   Standart puanları kullanırız çünkü standart puanlar kullanarak yorumlamak daha kolaydır.
+-   Standart puanların aritmetik ortalamaları ve standart sapmaları hep aynıdır, değişmez.(örnek, z-puan için ortalama 0 standart sapma 1'dir.
+
+
+---
+## Standart Puanlar
+
+-   Gözlemleri standart puanlara çevirildiginde dağılımın şekli değişmez.
+
+-   Standart puanlar yorumu kolaylaştırır.
+
+-   Örneğin 6 yaşında bir çocuk icin 20 kilo 1.30 cm dediğimizde bu cocuğun diğer çocuklara karşı zayıf mı şisman mı olduğunu kestiremeyiz.
+
+-   Ama aynı çocuğun boy ve kilosunu standart puan olarak ifade edersek bu bize çocuğun diğer çocuklara kıyasla nasıl olduğunu gösterir.
+
+---
+## Z-puanı
+
+**Z Puanı:** Bireyin grubun aritmetik ortalamasının kaç standart sapma üzerinde veya altında olduğunu belirten puanlardır.
+
+-   Grubun Ortalaması = 70
+-   Grubun Standart Sapması = 20
+
+90 puan alan bir birey ortalamanın 90-70=20 puan yani 1 standart sapma üzerinde puan almıştır. Böylece bu bireyin Z puanı 1´e eşittir.
+
+50 puan alan bir birey ortalamanın 50-70=-20 puan yani 1standart sapma altında puan almıştır. Böylece bu bireyin Z puanı -1´e eşittir.
+
+---
+## T-puanı
+
+Z puanları zaman zaman eksi değerler alabilmektedirler. Bu değerlerin eğitimde kullanışlı olmaması nedeniyle, puanlar bir başka standart puan olan T puanına dönüştürülür.
+
+**T Puanı:** Aritmetik ortalaması 50, standart sapması 10 olan puanlardır.
+
+T Puanı = 50 + (10\*Z)
+
+Bir öğrencinin Z puanı = 1,2 T puanı = 50 + (10\*1,2) = 50 + 12 = 62
+
+---
+## Standart Puanlar
+
+| Sınav | Aritmetik Ortalama | Standart Sapma | Ali´nin Puanı | Z Puanı | T Puanı |
+|-------|--------------------|----------------|---------------|---------|---------|
+| I     | 55                 | 15             | 70            |         |         |
+| II    | 60                 | 10             | 75            |         |         |
+| III   | 50                 | 5              | 40            |         |         |
+| IV    | 65                 | 20             | 65            |         |         |
+| V     | 70                 | 10             | 90            |         |         |
+
+
+---
+## Standart Puanlar
+
+| Sınav | Aritmetik Ortalama | Standart Sapma | Ali´nin Puanı | Z Puanı | T Puanı |
+|-------|--------------------|----------------|---------------|---------|---------|
+| I     | 55                 | 15             | 70            | 1       | 60      |
+| II    | 60                 | 10             | 75            | 1.5     | 65      |
+| III   | 50                 | 5              | 40            | -2      | 30      |
+| IV    | 65                 | 20             | 65            | 0       | 50      |
+| V     | 70                 | 10             | 90            | 2       | 70      |
+
+
+---
+## Standart Puanlar
+
+# Mutlak Başarı Oranı
+
+Mutlak başarı oranı, ölçme aracından bireyin aldığı değerin, ölçme sonucunda alınabilecek en yüksek değer bölümü ile elde edilir.
+
+MBO = X / XAEY
+
+Mutlak başarı oranının yüz üzerinden ifade edilebilmesi için mutlak başarı oranı 100 ile çarpılır, elde edilen sonuca mutlak başarı yüzdesi adı verilir.
+
+MBY = MBO\*100
+
+---
+## Mutlak Başarı Oranı
+
+|       |             |              |               |
+|-------|-------------|--------------|---------------|
+| Sınav | Soru Sayısı | Doğru Sayısı | Başarı Düzeyi |
+| I     | 20          | 8            |               |
+| II    | 40          | 30           |               |
+| III   | 30          | 15           |               |
+| IV    | 50          | 30           |               |
+| V     | 40          | 14           |               |
+
+---
+## Mutlak Başarı Oranı
+
+| Sınav | Soru Sayısı | Doğru Sayısı | Başarı Düzeyi |
+|-------|-------------|--------------|---------------|
+| I     | 20          | 8            | 0.40          |
+| II    | 40          | 30           | 0.75          |
+| III   | 30          | 15           | 0.50          |
+| IV    | 50          | 30           | 0.60          |
+| V     | 40          | 14           | 0.35          |
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
