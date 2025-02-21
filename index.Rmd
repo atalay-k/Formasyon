@@ -1,7 +1,7 @@
 ---
 title: "EĞİTİMDE ÖLÇME VE DEĞERLENDİRME"
 subtitle: "Ders Iceriği"
-date: "Bahar - 2024"
+date: "Bahar - 2025"
 output:
   html_document:
   toc: true
@@ -31,7 +31,7 @@ advdate <- function(obj, adv) {
   tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
   return(tmp)
 }
-mon <- ymd(20240219)
+mon <- ymd(20250221)
 
 ```
 
@@ -40,7 +40,7 @@ mon <- ymd(20240219)
 |                                        |                                |
 |----------------------------------------|--------------------------------|
 | **email:** kkatalay\@gmail.com         | **Sinif:** M10             |
-| **Ofis saatleri:** Cuma 10:00-12:00    | **Saat:**  18:00           |
+| **Ofis saatleri:** Cuma 10:00-12:00    | **Saat:**  14:00           |
 | **Ofis:** "Eğitim Bilimleri Bölümü" |                                |
   
 

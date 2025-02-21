@@ -2,7 +2,7 @@
 title: "`r emo::ji('muscle')` EGİTİMDE OLCME VE DEGERLENDİRME"
 subtitle: " <br> `r emo::ji('graph')` Dersi Tanıtma"
 author: "<br> <br> `r emo::ji('woman_teacher')` Dr. Kübra ATALAY KABASAKAL <br> Hacettepe Üniversitesi"
-date: "2024 Bahar <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
+date: " <br> <br> <br> <br>`r emo::ji('e-mail')` katalay@hacettepe.edu.tr"
 output:
   xaringan::moon_reader:
     lib_dir: libs
