@@ -31,7 +31,7 @@ advdate <- function(obj, adv) {
   tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
   return(tmp)
 }
-mon <- ymd(20250221)
+mon <- ymd(20250222)
 
 ```
 
@@ -180,7 +180,7 @@ Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki
 - `r advdate(mon, 12)`:  [Test İstatistikleri](sunum/11_TESTIST.html) 
 - `r advdate(mon, 13)`:  [Not Verme ve Genel Tekrar](sunum/14.html) 
 - `r advdate(mon, 14)`:  Not Verme ve Genel Tekrar
-- `r advdate(mon, 15)`:  Genel Sınav
+- `r advdate(mon, 17)`:  Genel Sınav
 
 
 
