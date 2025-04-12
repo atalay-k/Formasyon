@@ -1,7 +1,7 @@
 ---
 title: "EĞİTİMDE ÖLÇME VE DEĞERLENDİRME"
 subtitle: "Ders Iceriği"
-date: "Bahar - 2025"
+date: "Bahar "
 output:
   html_document:
   toc: true
@@ -39,8 +39,8 @@ mon <- ymd(20250222)
   
 |                                        |                                |
 |----------------------------------------|--------------------------------|
-| **email:** kkatalay\@gmail.com         | **Sinif:** M10             |
-| **Ofis saatleri:** Cuma 10:00-12:00    | **Saat:**  14:00           |
+| **email:** kkatalay\@gmail.com         | **Sinif:** -            |
+| **Ofis saatleri:** Cuma 10:00-12:00    | **Saat:**  -          |
 | **Ofis:** "Eğitim Bilimleri Bölümü" |                                |
   
 
@@ -167,20 +167,28 @@ Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki
 
 ## Ders Planı
 
-- `r advdate(mon, 2)`:   [Ölçmede Temel Kavramlar](sunum/02_Temel.html)
-- `r advdate(mon, 3)`:   [Ölçme araçlarının temel nitelikleri I](sunum/03_Guvenirlik.html)
-- `r advdate(mon, 4)`:   [Ölçme araçlarının temel nitelikleri II](sunum/04_Gecerlik.html)
-- `r advdate(mon, 5)`:    [Eğitimde kullanılan ölçme araçları I](sunum/05_SINAVLAR1.html) 
-- `r advdate(mon, 6)`:   [Eğitimde kullanılan ölçme araçları II](sunum/06_SINAVLAR2.html) 
-- `r advdate(mon, 7)`:   Ara Sınav
-- `r advdate(mon, 8)`:   [Eğitimde kullanılan ölçme araçları III](sunum/07_SINAVLAR3.html)
-- `r advdate(mon, 9)`:   [Eğitimde kullanılan ölçme araçları IV](sunum/08_PERFORMANS.html) 
-- `r advdate(mon, 10)`:  [Test Geliştirme](sunum/09_TG.html)
-- `r advdate(mon, 11)`:  [Madde Analizi](sunum/10_MADDEIST.html) 
-- `r advdate(mon, 12)`:  [Test İstatistikleri](sunum/11_TESTIST.html) 
-- `r advdate(mon, 13)`:  [Not Verme ve Genel Tekrar](sunum/14.html) 
-- `r advdate(mon, 14)`:  Not Verme ve Genel Tekrar
-- `r advdate(mon, 17)`:  Genel Sınav
+- [Ölçmede Temel Kavramlar](sunum/02_Temel.html)
+
+- [Ölçme araçlarının temel nitelikleri I](sunum/03_Guvenirlik.html)
+
+- [Ölçme araçlarının temel nitelikleri II](sunum/04_Gecerlik.html)
+
+- [Eğitimde kullanılan ölçme araçları I](sunum/05_SINAVLAR1.html) 
+
+- [Eğitimde kullanılan ölçme araçları II](sunum/06_SINAVLAR2.html) 
+-  Ara Sınav
+- [Eğitimde kullanılan ölçme araçları III](sunum/07_SINAVLAR3.html)
+
+- [Eğitimde kullanılan ölçme araçları IV](sunum/08_PERFORMANS.html) 
+- [Test Geliştirme](sunum/09_TG.html)
+
+- [Madde Analizi](sunum/10_MADDEIST.html) 
+
+- [Test İstatistikleri](sunum/11_TESTIST.html) 
+
+- [Not Verme ve Genel Tekrar](sunum/14.html) 
+-  Not Verme ve Genel Tekrar
+-  Genel Sınav
 
 
 

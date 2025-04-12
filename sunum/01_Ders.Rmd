@@ -32,21 +32,21 @@ style_duo_accent(
 ```
 
 ```{r, include=FALSE}
-advdate <- function(obj, adv) {
- tmon <- obj + 7*(adv-1)
- # tfri <- obj + 4 + 7*(adv-1)
- tmon <- format(tmon, format="%d/%m")
- # tfri <- format(tfri, format="%d/%m")
- zadv <- sprintf("%02d", adv)
- tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
- return(tmp)
-}
-
-library(lubridate)
-options(scipen=999)
-library(tidyverse)
-library(stevemisc)
-mon <- ymd(20221003)
+# advdate <- function(obj, adv) {
+#  tmon <- obj + 7*(adv-1)
+#  # tfri <- obj + 4 + 7*(adv-1)
+#  tmon <- format(tmon, format="%d/%m")
+#  # tfri <- format(tfri, format="%d/%m")
+#  zadv <- sprintf("%02d", adv)
+#  tmp <- paste("Hafta ",zadv,sep='',", ", tmon)
+#  return(tmp)
+# }
+# 
+# library(lubridate)
+# options(scipen=999)
+# library(tidyverse)
+# library(stevemisc)
+# mon <- ymd(20221003)
 ```
 
 ---
@@ -54,11 +54,11 @@ mon <- ymd(20221003)
 
 .huge[`r emo::ji("link")`] [Doç. Dr. Kübra Atalay Kabasakal](https://avesis.hacettepe.edu.tr/katalay)
 
-.huge[`r emo::ji("link")`] **Sinif:** Zoom Perşembe 13:00-14:50
+.huge[`r emo::ji("link")`] **Sinif:**
 
 **Ofis saatleri:** Cuma 10:00-12:00    
  
-**Ofis:** "Eğitim Bilimleri Enstitüsü"                              
+**Ofis:**                           
 ---
 # EGT204 IZLENCE.huge[`r emo::ji("stats")`]
 
