@@ -157,7 +157,7 @@ Bu dersi başarıyla tamamlayan öğretmen adayları ders bitiminde aşağıdaki
 
 
 # Ders Planı
-# `r advdate(mon, 1)`: [Dersin ve Kaynakların Tanınımı](sunum/01_Ders.html)
+#  [Dersin ve Kaynakların Tanınımı]
 
 - Tanışma
 
